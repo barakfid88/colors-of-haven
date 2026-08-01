@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="עמוד הבית — Colors of Haven" description="עמוד בית מלא בעברית: הירו עננים עם סרטון מסע מסונכרן לגלילה, שירותים, גלריית פרויקטים שנעה בגלילה, חשיפת לפני/אחרי עם העכבר, חדר תלת-מימדי, המלצות ופוטר." -->
+<helmet><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..700&family=Suez+One&family=Oi&display=swap"><script src="assets/a11y/a11y.js"></script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script><style>html{scroll-behavior:smooth}html,body{margin:0;padding:0;background:#FFFFFF}section[id]{scroll-margin-top:86px}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}*{box-sizing:border-box}@keyframes drift-a{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}@keyframes drift-b{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}@keyframes breathe{0%,100%{transform:scale(1.04)}50%{transform:scale(1.11)}}@keyframes hint-pulse{0%,100%{transform:translateY(0);opacity:.75}50%{transform:translateY(7px);opacity:1}}
+.svc{position:relative;overflow:hidden;background:#FFFFFF;border-radius:10px;padding:30px 26px 34px;display:grid;gap:12px;align-content:start;box-shadow:0 1px 2px rgba(15,34,51,.06),0 14px 34px rgba(15,34,51,.05);opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(30px);transition:opacity 260ms linear,clip-path 900ms cubic-bezier(.16,1,.3,1),transform 900ms cubic-bezier(.16,1,.3,1),box-shadow 480ms cubic-bezier(.16,1,.3,1)}
+.svc-in .svc{opacity:1;clip-path:inset(0 0 0 0);transform:none}
+.svc>*{position:relative;z-index:2}
+.svc .bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.16;filter:saturate(.35) brightness(1.05);transform:scale(1.12);transition:opacity 620ms cubic-bezier(.16,1,.3,1),filter 620ms cubic-bezier(.16,1,.3,1),transform 900ms cubic-bezier(.16,1,.3,1)}
+.svc .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(255,255,255,.94),rgba(255,255,255,.7))}
+.svc:hover .bg{opacity:1;filter:saturate(1) brightness(1)}
+.svc:hover .bg::after{background:linear-gradient(to top,rgba(15,34,51,.86),rgba(15,34,51,.4))}
+.svc .n{font-family:'Suez One',serif;font-size:13px;color:#C9AE87;transition:color 480ms cubic-bezier(.16,1,.3,1)}
+.svc h3{margin:0;font-family:'Suez One',serif;font-weight:400;font-size:21px;line-height:1.3;transition:color 480ms cubic-bezier(.16,1,.3,1)}
+.svc p{margin:0;font-size:15px;line-height:1.7;color:#284559;transition:color 480ms cubic-bezier(.16,1,.3,1)}
+.svc-in .svc:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(15,34,51,.18)}
+.svc:hover .bg{opacity:1;transform:scale(1)}
+.svc:hover h3{color:#F2EADF}.svc:hover p{color:rgba(242,234,223,.88)}
+@media (prefers-reduced-motion:reduce){.svc{opacity:1!important;clip-path:none!important}}
+.cta{position:relative;overflow:hidden;display:inline-flex;align-items:center;height:54px;padding:0 34px;border-radius:6px;background:#123A5C;color:#F2EADF;font-size:14px;font-weight:600;letter-spacing:.02em;text-decoration:none;cursor:pointer;transition:color 380ms cubic-bezier(.16,1,.3,1),transform 220ms cubic-bezier(.16,1,.3,1),box-shadow 340ms cubic-bezier(.16,1,.3,1)}
+.cta::before{content:"";position:absolute;top:var(--sy,50%);left:var(--sx,50%);width:0;height:0;border-radius:50%;background:#C9AE87;transform:translate(-50%,-50%);transition:width 620ms cubic-bezier(.16,1,.3,1),height 620ms cubic-bezier(.16,1,.3,1);z-index:1}
+.cta:hover::before{width:290%;height:620%}
+.cta:hover{color:#0F2233;box-shadow:0 10px 24px rgba(15,34,51,.2)}
+.cta:active{transform:scale(.98)}
+.cta .stack{position:relative;z-index:2;display:grid;height:54px;align-items:center;justify-items:center;text-align:center;overflow:hidden}
+.cta .stack i{font-style:normal;grid-area:1/1;white-space:nowrap;transition:transform 480ms cubic-bezier(.16,1,.3,1),opacity 340ms cubic-bezier(.16,1,.3,1)}
+.cta .stack i+i{transform:translateY(115%);opacity:0}
+.cta:hover .stack i{transform:translateY(-115%);opacity:0}
+.cta:hover .stack i+i{transform:translateY(0);opacity:1}
+.cta-on{background:#F2EADF;color:#0F2233}
+.cta-ghost{height:46px;padding:0 24px;background:transparent;color:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6);text-shadow:0 1px 14px rgba(15,34,51,.5)}
+.cta-ghost .stack{height:46px}
+.cta-ghost:hover{color:#0F2233;text-shadow:none;box-shadow:inset 0 0 0 1px #C9AE87}
+@media (prefers-reduced-motion:reduce){.cta::before{display:none}.cta .stack i+i{display:none}}
+.isle-nav::before{content:"";position:absolute;top:-16px;right:-26px;left:-26px;height:86px;background:linear-gradient(to bottom,rgba(15,34,51,.62),rgba(15,34,51,.28) 68%,rgba(15,34,51,0));backdrop-filter:saturate(130%) blur(8px);-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent);pointer-events:none;z-index:0}
+.isle-nav>*{position:relative;z-index:1}
+.isle-nav{position:fixed;top:16px;right:clamp(12px,2.5vw,26px);left:clamp(12px,2.5vw,26px);z-index:2000;display:flex;align-items:center;justify-content:space-between;gap:14px;pointer-events:none;transform:translateY(-140%);opacity:0;transition:transform 680ms cubic-bezier(.16,1,.3,1),opacity 520ms cubic-bezier(.16,1,.3,1)}
+.isle-nav.in{transform:translateY(0);opacity:1}
+.isle-nav>*{pointer-events:auto}
+.isle{display:flex;align-items:center;height:46px;gap:26px;padding:0 22px;line-height:1;border-radius:999px;background:rgba(15,34,51,.9);backdrop-filter:saturate(150%) blur(14px);box-shadow:0 10px 24px rgba(15,34,51,.22);font-size:14px;font-weight:500}
+.isle a{color:rgba(242,234,223,.8);text-decoration:none;transition:color 200ms cubic-bezier(.16,1,.3,1)}
+.isle a:hover{color:#FFFFFF}
+.isle a{position:relative;white-space:nowrap}
+.isle a::after{content:"";position:absolute;right:0;left:0;bottom:-5px;height:1px;background:#C9AE87;transform:scaleX(0);transform-origin:right;transition:transform 420ms cubic-bezier(.16,1,.3,1)}
+.isle a.here::after,.isle a:hover::after{transform:scaleX(1)}
+.isle a.here{color:#FFFFFF}
+.hero-nav .isle a.here{color:#0F2233}
+.hero-nav .isle a::after{background:#123A5C}
+.isle-links{gap:20px}
+.menu-btn{display:none;align-items:center;gap:9px;height:46px;padding:0 20px;border:0;border-radius:999px;background:rgba(15,34,51,.9);backdrop-filter:saturate(150%) blur(14px);box-shadow:0 10px 24px rgba(15,34,51,.22);color:#F2EADF;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.hero-nav .menu-btn{background:rgba(255,255,255,.62);color:#0F2233;box-shadow:0 8px 20px rgba(15,34,51,.1)}
+.menu-btn i{display:grid;gap:4px;width:16px}
+.menu-btn i b{display:block;height:1.5px;background:currentColor;border-radius:2px;transition:transform 320ms cubic-bezier(.16,1,.3,1),opacity 220ms}
+.menu-btn[aria-expanded="true"] i b:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i b:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] i b:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.menu-sheet{position:fixed;inset:0;z-index:2100;display:none;background:rgba(15,34,51,.34);opacity:0;transition:opacity 320ms cubic-bezier(.16,1,.3,1)}
+.menu-sheet.open{opacity:1}
+.menu-panel{position:absolute;top:0;right:0;bottom:0;width:min(380px,84vw);background:rgba(15,34,51,.97);backdrop-filter:blur(14px);box-shadow:-18px 0 46px rgba(15,34,51,.34);padding:96px clamp(24px,5vw,40px) 40px;overflow-y:auto;transform:translateX(100%);transition:transform 560ms cubic-bezier(.16,1,.3,1)}
+.menu-sheet.open .menu-panel{transform:none}
+.menu-panel::before{content:"";position:absolute;top:0;right:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(201,174,135,0),#C9AE87 30%,#C9AE87 70%,rgba(201,174,135,0));transform:scaleY(0);transform-origin:top;transition:transform 720ms cubic-bezier(.16,1,.3,1) 120ms}
+.menu-sheet.open .menu-panel::before{transform:scaleY(1)}
+.menu-sheet nav a,.menu-sheet .foot a{opacity:0;transform:translateX(28px);transition:opacity 460ms cubic-bezier(.16,1,.3,1),transform 620ms cubic-bezier(.16,1,.3,1),color 220ms,padding-right 320ms cubic-bezier(.16,1,.3,1)}
+.menu-sheet.open nav a,.menu-sheet.open .foot a{opacity:1;transform:none}
+.menu-sheet.open nav a:nth-child(1){transition-delay:180ms}
+.menu-sheet.open nav a:nth-child(2){transition-delay:235ms}
+.menu-sheet.open nav a:nth-child(3){transition-delay:290ms}
+.menu-sheet.open nav a:nth-child(4){transition-delay:345ms}
+.menu-sheet.open nav a:nth-child(5){transition-delay:400ms}
+.menu-sheet.open nav a:nth-child(6){transition-delay:455ms}
+.menu-sheet.open nav a:nth-child(7){transition-delay:510ms}
+.menu-sheet.open .foot a:nth-child(1){transition-delay:580ms}
+.menu-sheet.open .foot a:nth-child(2){transition-delay:630ms}
+@media (prefers-reduced-motion:reduce){.menu-panel,.menu-panel::before,.menu-sheet nav a,.menu-sheet .foot a{transition-duration:1ms!important;transition-delay:0ms!important}}
+.menu-sheet nav{display:grid;gap:6px}
+.menu-sheet a{font-family:'Suez One',serif;font-weight:400;font-size:clamp(21px,4.4vw,27px);color:#F2EADF;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(242,234,223,.14);transition:color 220ms,padding-right 320ms cubic-bezier(.16,1,.3,1)}
+.menu-sheet a:hover{color:#C9AE87;padding-right:10px}
+.menu-sheet a.here{color:#C9AE87}
+.menu-sheet .foot{margin-top:32px;display:grid;gap:12px;font-size:15px}
+.menu-sheet .foot a{font-family:'Rubik',sans-serif;font-size:17px;border:0;padding:0;color:rgba(242,234,223,.8)}
+@media (max-width:1180px){.isle-nav .isle-links,.hero-nav .isle-links{display:none}.isle-nav .menu-btn,.hero-nav .menu-btn{display:inline-flex}}
+.isle .wm{display:block;font-family:'Oi',cursive;direction:ltr;font-size:16px;line-height:1;color:#F2EADF;letter-spacing:.01em}
+.isle-nav .cta{height:46px;padding:0 24px;background:rgba(15,34,51,.9);backdrop-filter:saturate(150%) blur(14px);box-shadow:0 10px 24px rgba(15,34,51,.22)}
+.isle-nav .cta .stack{height:46px}
+.isle-nav .cta:hover{color:#0F2233}
+@media (max-width:720px){.isle-nav .isle-links{display:none}}
+.wa-fab{position:fixed;left:20px;bottom:20px;z-index:2000;display:flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 18px;border-radius:999px;background:#123A5C;color:#F2EADF;font-family:'Rubik',sans-serif;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 10px 26px rgba(15,34,51,.28);opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;transition:opacity 420ms cubic-bezier(.16,1,.3,1),transform 420ms cubic-bezier(.16,1,.3,1),background 220ms}
+.wa-fab.in{opacity:1;transform:none;pointer-events:auto}
+.wa-fab:hover{background:#0F2233}
+.wa-fab .dot{width:9px;height:9px;border-radius:50%;background:#8FBF7F;box-shadow:0 0 0 3px rgba(143,191,127,.28)}
+.field{display:grid;gap:8px}
+.field label{font-size:13px;color:#284559;font-weight:500}
+.field input,.field select{font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px;transition:border-color 200ms}
+.field input:focus,.field select:focus{outline:none;border-color:#123A5C}
+.field input::placeholder{color:#8CA0AF}
+@keyframes pan-soft{from{transform:translate3d(0,0,0)}to{transform:translate3d(-22%,0,0)}}
+@keyframes area-fade{0%,22%{opacity:1}28%,97%{opacity:0}100%{opacity:1}}
+.area-rail{position:relative;width:100%;height:100%;border-radius:10px;overflow:hidden;box-shadow:0 20px 46px rgba(0,0,0,.32)}
+.area-rail img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:area-fade 16s infinite}
+.area-rail img:nth-child(1){animation-delay:0s}
+.area-rail img:nth-child(2){animation-delay:4s}
+.area-rail img:nth-child(3){animation-delay:8s}
+.area-rail img:nth-child(4){animation-delay:12s}
+@media (prefers-reduced-motion:reduce){.area-rail img{animation:none;opacity:0}.area-rail img:nth-child(1){opacity:1}}
+[data-area-dot]{transition:fill 320ms,r 320ms}
+[data-area-dot].active{fill:#C9AE87;r:7}
+[data-area-chip].active{background:rgba(201,174,135,.28)!important;box-shadow:inset 0 0 0 1px #C9AE87!important}
+.area-thumb{width:clamp(72px,7vw,100px);height:clamp(72px,7vw,100px);border-radius:8px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.4);opacity:.55;transition:opacity 320ms cubic-bezier(.16,1,.3,1),transform 420ms cubic-bezier(.16,1,.3,1),outline-color 320ms;outline:2px solid transparent}
+.area-thumb.active{opacity:1;transform:translateY(-6px);outline-color:#C9AE87}
+.area-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.area-thumb,[data-area-chip]{pointer-events:auto;cursor:pointer}
+.area-thumb:hover,[data-area-chip]:hover{opacity:1}
+.hero-nav{position:absolute;top:22px;right:clamp(12px,2.5vw,26px);left:clamp(12px,2.5vw,26px);z-index:6;display:flex;align-items:center;justify-content:space-between;gap:14px;will-change:opacity,transform}
+.hero-nav .isle{background:rgba(255,255,255,.62);box-shadow:0 8px 20px rgba(15,34,51,.1)}
+.hero-nav .isle a{color:#284559}
+.hero-nav .isle a:hover{color:#0F2233}
+.hero-nav .isle .wm{color:#0F2233}
+.hero-nav .cta{height:46px;padding:0 24px;background:rgba(255,255,255,.62);backdrop-filter:saturate(150%) blur(14px);color:#0F2233;box-shadow:0 8px 20px rgba(15,34,51,.1)}
+.hero-nav .cta .stack{height:46px}
+@media (max-width:720px){.hero-nav .isle-links{display:none}}
+@media (max-width:720px){.isle-nav,.hero-nav{gap:8px;flex-wrap:wrap;row-gap:8px}.isle-nav .cta,.hero-nav .cta{height:42px;padding:0 18px;font-size:13px;flex:1 1 auto;justify-content:center}.isle-nav .cta .stack,.hero-nav .cta .stack{height:42px}.isle{height:42px;padding:0 16px}.isle .wm{font-size:14px}.menu-btn{height:42px;padding:0 16px;font-size:13px}}
+@media (max-width:640px){.contact-grid,.form-row,.intro-grid,.footer-cta-grid{grid-template-columns:1fr!important}.footer-cta-grid{justify-items:start}}
+@media (pointer:coarse){
+.hero-nav{display:none!important}
+.isle-nav{opacity:1!important;transform:none!important}
+.bucket-fail{display:none!important}
+.rail-wrap{height:auto!important}
+.rail-sticky{position:static!important;height:auto!important;justify-content:flex-start!important;padding:clamp(28px,5vh,56px) 0 clamp(32px,6vh,64px)}
+.rail-head{position:static!important;padding:0 clamp(20px,4.5vw,72px) 22px!important}
+.rail{width:auto!important;transform:none!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>figure{scroll-snap-align:center;align-self:stretch!important;flex-shrink:0!important}
+}
+.rv{transition:opacity 620ms cubic-bezier(.16,1,.3,1),transform 900ms cubic-bezier(.16,1,.3,1)}
+.rv.rv-hide{opacity:0;transform:translateY(26px)}
+.rv.rv-hide.in{opacity:1;transform:none}
+.rvi{overflow:hidden;position:relative}
+.rvi.rv-hide::after{content:"";position:absolute;inset:0;background:#C9AE87;transform-origin:right;transition:transform 860ms cubic-bezier(.16,1,.3,1);z-index:1}
+.rvi.rv-hide.in::after{transform:scaleX(0)}
+.rvi img{transition:transform 900ms cubic-bezier(.16,1,.3,1)}
+.rvi:hover img{transform:scale(1.05)}
+.rvq{transition:transform 420ms cubic-bezier(.16,1,.3,1),border-color 420ms}
+.rvq:hover{transform:translateY(-4px);border-top-color:#C9AE87!important}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;clip-path:none!important;transform:none!important}.rvi::after{display:none}}
+.step{opacity:0;transform:translateY(22px);transition:opacity 620ms cubic-bezier(.16,1,.3,1),transform 620ms cubic-bezier(.16,1,.3,1)}
+.step-land .step{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.step{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.msvc{position:relative;overflow:hidden;background:#FFFFFF;border-radius:10px;padding:22px 20px;display:grid;gap:10px;cursor:pointer;box-shadow:0 1px 2px rgba(15,34,51,.06),0 14px 30px rgba(15,34,51,.05)}
+.msvc img,.msvc .ov{transition:opacity 350ms cubic-bezier(.16,1,.3,1)}
+</style></helmet>
+<sc-if value="{{ isDesktop }}">
+<div ref="{{ isleRef }}" class="isle-nav" dir="rtl" style="font-family:'Rubik',sans-serif">
+<div class="isle"><span class="wm">COLORS OF HAVEN</span></div>
+<div class="isle isle-links"><a href="#top">בית</a><a href="#services">שירותים</a><a href="#projects">פרויקטים</a><a href="#how">איך זה עובד</a><a href="#testimonials">המלצות</a><a href="#areas">אזורי שירות</a><a href="#contact">צור קשר</a></div><button type="button" class="menu-btn" aria-expanded="false" aria-label="תפריט" onClick="{{ onMenu }}"><i><b></b><b></b><b></b></i>תפריט</button>
+<a href="#contact" class="cta"><span class="stack"><i>לקבלת הצעת מחיר</i><i>058-780-8908</i></span></a>
+</div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0F2233"/><text x="50" y="58" font-family="Georgia,serif" font-size="26" fill="#F2EADF" text-anchor="middle">CH</text></svg></template>
+<div ref="{{ sheetRef }}" class="menu-sheet" dir="rtl" onClick="{{ onSheetClick }}">
+<div class="menu-panel">
+<nav><a href="#top">בית</a><a href="#services">שירותים</a><a href="#projects">פרויקטים</a><a href="#how">איך זה עובד</a><a href="#testimonials">המלצות</a><a href="#areas">אזורי שירות</a><a href="#contact">צור קשר</a></nav>
+<div class="foot"><a href="tel:+972587808908" style="direction:ltr">058-780-8908</a><a href="mailto:barakfid88@gmail.com" style="direction:ltr">barakfid88@gmail.com</a></div>
+</div>
+</div>
+<a ref="{{ waRef }}" href="https://wa.me/972587808908" target="_blank" rel="noopener" class="wa-fab" dir="rtl"><span class="dot"></span>וואטסאפ מהיר</a>
+<div id="top" ref="{{ wrapRef }}" dir="rtl" style="position:relative;height:380vh;background:#FFFFFF;font-family:'Rubik',sans-serif">
+<div style="position:sticky;top:0;height:100vh;overflow:hidden;background:linear-gradient(180deg,#CFE2EF 0%,#EAF2F8 55%,#F1EEE8 100%)">
+<div ref="{{ cloudsRef }}" style="position:absolute;inset:-14%;will-change:transform,opacity">
+<div style="position:absolute;inset:0;background:url('assets/frames/sky-02.jpg') center/cover no-repeat;animation:breathe 46s ease-in-out infinite;will-change:transform"></div>
+<div ref="{{ cloudARef }}" style="position:absolute;inset:0;opacity:.9;will-change:transform"><div style="position:absolute;top:0;left:0;width:200%;height:100%;display:flex;animation:drift-a 96s linear infinite"><div style="width:50%;height:100%;background:url('assets/frames/sky-01.jpg') center/cover no-repeat"></div><div style="width:50%;height:100%;background:url('assets/frames/sky-01.jpg') center/cover no-repeat;transform:scaleX(-1)"></div></div></div>
+<div ref="{{ cloudBRef }}" style="position:absolute;inset:-18% -10% auto -10%;height:96%;opacity:.5;filter:blur(5px);will-change:transform;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 46%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 46%,transparent 100%)"><div style="position:absolute;top:0;left:0;width:200%;height:100%;display:flex;transform:scaleY(1.25);animation:drift-b 152s linear infinite reverse"><div style="width:50%;height:100%;background:url('assets/frames/sky-01.jpg') center/cover no-repeat"></div><div style="width:50%;height:100%;background:url('assets/frames/sky-01.jpg') center/cover no-repeat;transform:scaleX(-1)"></div></div></div>
+<div style="position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.55),rgba(255,255,255,0) 60%)"></div>
+</div>
+<video ref="{{ videoRef }}" src="assets/video/journey.mp4" data-src="assets/video/journey.mp4" muted="" playsinline="" webkit-playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:opacity"></video>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,20,28,.28),rgba(12,20,28,0) 38%,rgba(12,20,28,0) 60%,rgba(12,20,28,.34));pointer-events:none"></div>
+<div ref="{{ heroNavRef }}" class="hero-nav">
+<div class="isle"><span class="wm">COLORS OF HAVEN</span></div>
+<div class="isle isle-links"><a href="#top">בית</a><a href="#services">שירותים</a><a href="#projects">פרויקטים</a><a href="#how">איך זה עובד</a><a href="#testimonials">המלצות</a><a href="#areas">אזורי שירות</a><a href="#contact">צור קשר</a></div><button type="button" class="menu-btn" aria-expanded="false" aria-label="תפריט" onClick="{{ onMenu }}"><i><b></b><b></b><b></b></i>תפריט</button>
+<a href="#" class="cta"><span class="stack"><i>דברו איתנו</i><i>058-780-8908</i></span></a>
+</div>
+<div ref="{{ titleRef }}" style="position:absolute;top:clamp(130px,13vh,168px);left:clamp(20px,4.5vw,72px);z-index:5;text-align:left;direction:ltr;will-change:transform,opacity,filter">
+<h1 style="margin:0;font-family:'Oi',cursive;font-weight:400;font-size:clamp(44px,7.6vw,124px);line-height:1.06;letter-spacing:.005em;color:#FFFFFF;text-shadow:0 6px 34px rgba(15,34,51,.42),0 1px 3px rgba(15,34,51,.25)">COLORS<br>OF HAVEN</h1>
+</div>
+<div ref="{{ endRef }}" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;z-index:7;opacity:0;background:radial-gradient(70% 60% at 50% 50%,rgba(12,20,28,.42),rgba(12,20,28,0) 75%);pointer-events:none;text-align:center;will-change:transform,opacity,filter">
+<div style="font-size:12px;letter-spacing:.24em;font-weight:600;color:rgba(242,234,223,.8)">קבלן שיפוצים כללי</div>
+<h2 style="margin:0;font-family:'Oi',cursive;font-weight:400;font-size:clamp(32px,5.2vw,88px);line-height:1.1;letter-spacing:.005em;color:#F2EADF;text-shadow:0 2px 40px rgba(12,20,28,.45);direction:ltr">COLORS OF HAVEN</h2>
+<p style="margin:0;font-size:clamp(16px,1.5vw,22px);line-height:1.6;color:rgba(242,234,223,.92);max-width:40ch">מהחלום שבעננים — עד המפתח שביד.</p>
+<a href="#contact" class="cta cta-on" style="box-shadow:0 10px 24px rgba(20,25,30,.18)"><span class="stack"><i>לקבלת הצעת מחיר</i><i>דברו איתנו עוד היום</i></span></a>
+</div>
+<div ref="{{ hintRef }}" style="position:absolute;bottom:34px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:6;color:#FFFFFF;text-shadow:0 1px 14px rgba(15,34,51,.5);will-change:opacity">
+<span style="font-size:11px;letter-spacing:.24em;font-weight:600">גללו כדי להמריא</span>
+<span style="display:block;width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.85),transparent);animation:hint-pulse 2.6s ease-in-out infinite"></span>
+</div>
+</div>
+</div>
+
+
+<div dir="rtl" style="background:#FFFFFF;color:#0F2233;font-family:'Rubik',sans-serif">
+
+<section class="intro-grid" style="max-width:1440px;margin:0 auto;padding:clamp(80px,11vh,150px) clamp(20px,4.5vw,72px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:end">
+<div>
+<div style="font-size:12px;letter-spacing:.24em;font-weight:600;color:#C9AE87;margin-bottom:22px">קבלן שיפוצים כללי</div>
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(30px,3.7vw,60px);line-height:1.18;letter-spacing:-.01em">קבלן אחד לוקח אחריות<br>על כל השיפוץ.</h2>
+</div>
+<p style="margin:0;font-size:clamp(16px,1.25vw,19px);line-height:1.72;color:#284559;text-wrap:pretty">אנחנו מנהלים את הפרויקט מהיום הראשון ועד מסירת המפתח — הריסה, אינסטלציה, חשמל, ריצוף, טיח וצבע. בעל בית אחד, איש קשר אחד, לוח זמנים אחד שאפשר לסמוך עליו.</p>
+</section>
+
+<section id="services" style="background:#F4F6F8;padding:clamp(72px,10vh,132px) 0">
+<div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4.5vw,72px)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vh,64px)">
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(26px,2.8vw,44px);line-height:1.2">מה אנחנו עושים</h2>
+<span style="font-size:13px;color:#5C7183">ארבעה תחומים, צוות אחד</span>
+</div>
+<div ref="{{ svcRef }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(14px,1.6vw,22px)">
+<article class="svc" style="transition-delay:0ms">
+<span class="bg" style="background-image:url('assets/frames/p-04.jpg')"></span>
+<span class="n">01</span>
+<h3>שיפוץ כללי</h3>
+<p>דירה או בית שלם — תכנון, פירוקים, ניהול קבלני משנה ומסירה נקייה.</p>
+</article>
+<article class="svc" style="transition-delay:90ms">
+<span class="bg" style="background-image:url('assets/frames/interior.jpg')"></span>
+<span class="n">02</span>
+<h3>צבע וטיח</h3>
+<p>קווים ישרים, פינות חדות וגימור אחיד. בלי תיקונים אחרי שהלכנו.</p>
+</article>
+<article class="svc" style="transition-delay:180ms">
+<span class="bg" style="background-image:url('assets/frames/p-08.jpg')"></span>
+<span class="n">03</span>
+<h3>מטבחים ואמבטיות</h3>
+<p>אינסטלציה, חשמל, איטום וריצוף — הכל מתואם מראש, בלי הפתעות.</p>
+</article>
+<article class="svc" style="transition-delay:270ms">
+<span class="bg" style="background-image:url('assets/frames/p-05.jpg')"></span>
+<span class="n">04</span>
+<h3>חוץ וגמר</h3>
+<p>חיפוי אבן, פרגולות, דקים ומרפסות — הרושם הראשון של הבית.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section id="how" ref="{{ howRef }}" style="background:#FFFFFF;padding:clamp(72px,10vh,132px) 0;overflow:hidden">
+<div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4.5vw,72px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,90px);align-items:center">
+<div ref="{{ stepsRef }}">
+<div class="rv" style="font-size:12px;letter-spacing:.24em;font-weight:600;color:#C9AE87;margin-bottom:18px">איך זה עובד</div>
+<h2 class="rv" style="transition-delay:90ms;margin:0 0 clamp(28px,4.5vh,52px);font-family:'Suez One',serif;font-weight:400;font-size:clamp(26px,2.8vw,44px);line-height:1.2;max-width:14ch">מהפגישה הראשונה ועד המפתח ביד.</h2>
+<div style="display:grid;gap:clamp(22px,3vh,34px)">
+<div class="step" style="transition-delay:60ms;display:grid;grid-template-columns:auto 1fr;gap:18px"><span style="font-family:'Suez One',serif;font-size:22px;color:#C9AE87">01</span><div><h3 style="margin:0 0 6px;font-family:'Suez One',serif;font-weight:400;font-size:19px">פגישת אפיון</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#284559">מגיעים אליכם, מודדים ומבינים בדיוק מה צריך.</p></div></div>
+<div class="step" style="transition-delay:170ms;display:grid;grid-template-columns:auto 1fr;gap:18px"><span style="font-family:'Suez One',serif;font-size:22px;color:#C9AE87">02</span><div><h3 style="margin:0 0 6px;font-family:'Suez One',serif;font-weight:400;font-size:19px">הצעת מחיר מפורטת</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#284559">סעיף לכל פריט, בלי עלויות נסתרות שיצוצו באמצע.</p></div></div>
+<div class="step" style="transition-delay:280ms;display:grid;grid-template-columns:auto 1fr;gap:18px"><span style="font-family:'Suez One',serif;font-size:22px;color:#C9AE87">03</span><div><h3 style="margin:0 0 6px;font-family:'Suez One',serif;font-weight:400;font-size:19px">ביצוע וניהול צמוד</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#284559">קבלן אחד מתאם את כל בעלי המקצוע ומעדכן אתכם בדרך.</p></div></div>
+<div class="step" style="transition-delay:390ms;display:grid;grid-template-columns:auto 1fr;gap:18px"><span style="font-family:'Suez One',serif;font-size:22px;color:#C9AE87">04</span><div><h3 style="margin:0 0 6px;font-family:'Suez One',serif;font-weight:400;font-size:19px">מסירה נקייה</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#284559">סבב בדיקה משותף, תיקונים אם צריך, ומפתח ביד.</p></div></div>
+</div>
+</div>
+<div style="position:relative;height:clamp(320px,44vw,480px)">
+<canvas ref="{{ bucketRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+</div>
+</div>
+</section>
+
+<section id="projects" ref="{{ railWrapRef }}" class="rail-wrap" style="position:relative;height:320vh;background:#0F2233">
+<div class="rail-sticky" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center">
+<div class="rail-head" style="position:absolute;top:0;right:0;left:0;display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:clamp(28px,5vh,56px) clamp(20px,4.5vw,72px);z-index:2">
+<h2 class="rv" style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(24px,2.6vw,40px);color:#F2EADF">פרויקטים</h2>
+<span ref="{{ railHintRef }}" class="rv" style="transition-delay:140ms;font-size:12px;letter-spacing:.2em;font-weight:600;color:rgba(242,234,223,.6)">גללו — הגלריה נעה</span>
+</div>
+<div ref="{{ railRef }}" class="rail" style="display:flex;gap:clamp(16px,2vw,32px);padding:0 clamp(20px,4.5vw,72px);width:max-content;will-change:transform">
+<figure style="margin:0;width:clamp(260px,32vw,460px);display:grid;gap:14px"><span class="rvi" style="display:block;border-radius:8px;aspect-ratio:4/5"><img src="assets/frames/pr-villa.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span><figcaption class="rv" style="font-size:14px;color:rgba(242,234,223,.78)">וילה פרטית · שיפוץ חוץ מלא<br><span style="color:rgba(242,234,223,.45)">טיח, חיפוי וגינון</span></figcaption></figure>
+<figure style="margin:0;width:clamp(300px,40vw,600px);display:grid;gap:14px;align-self:center"><span class="rvi" style="display:block;border-radius:8px;aspect-ratio:16/10"><img src="assets/frames/pr-plaster.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span><figcaption class="rv" style="font-size:14px;color:rgba(242,234,223,.78)">טיח וצבע · חלל פתוח<br><span style="color:rgba(242,234,223,.45)">גימור לפני ריהוט</span></figcaption></figure>
+<figure style="margin:0;width:clamp(260px,32vw,460px);display:grid;gap:14px;align-self:end"><span class="rvi" style="display:block;border-radius:8px;aspect-ratio:4/5"><img src="assets/frames/pr-frame.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span><figcaption class="rv" style="font-size:14px;color:rgba(242,234,223,.78)">בניין בשלב גמר<br><span style="color:rgba(242,234,223,.45)">שלד, טיח וצבע</span></figcaption></figure>
+<figure style="margin:0;width:clamp(300px,40vw,600px);display:grid;gap:14px"><span class="rvi" style="display:block;border-radius:8px;aspect-ratio:16/10"><img src="assets/frames/pr-stone.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span><figcaption class="rv" style="font-size:14px;color:rgba(242,234,223,.78)">חיפוי אבן<br><span style="color:rgba(242,234,223,.45)">חיבור אבן וטיח</span></figcaption></figure>
+<figure style="margin:0;width:clamp(260px,32vw,460px);display:grid;gap:14px;align-self:center"><span class="rvi" style="display:block;border-radius:8px;aspect-ratio:4/5"><img src="assets/frames/pr-livingroom.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span><figcaption class="rv" style="font-size:14px;color:rgba(242,234,223,.78)">סלון · גימור לבן<br><span style="color:rgba(242,234,223,.45)">קירות חלקים, אור טבעי</span></figcaption></figure>
+<figure style="margin:0;width:clamp(300px,40vw,600px);display:grid;gap:14px;align-self:end"><span class="rvi" style="display:block;border-radius:8px;aspect-ratio:16/10"><img src="assets/frames/pr-aerial.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span><figcaption class="rv" style="font-size:14px;color:rgba(242,234,223,.78)">מבט מלמעלה · סיום פרויקט<br><span style="color:rgba(242,234,223,.45)">בית פרטי, חוץ וגמר</span></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section id="testimonials" style="padding:clamp(80px,11vh,140px) 0;background:#FFFFFF">
+<div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4.5vw,72px)">
+<h2 class="rv" style="margin:0 0 clamp(32px,5vh,60px);font-family:'Suez One',serif;font-weight:400;font-size:clamp(26px,2.8vw,44px)">המלצות</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.4vw,34px)">
+<blockquote class="rv rvq" style="margin:0;display:grid;gap:18px;align-content:start;padding-top:26px;border-top:1px solid rgba(15,34,51,.12)"><p style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(18px,1.5vw,23px);line-height:1.5">״נכנסו בתאריך שאמרו, יצאו בתאריך שאמרו. הבית היה נקי בכל יום שישי.״</p><footer style="font-size:14px;color:#5C7183">דנה ואיתי · שיפוץ דירת 4 חדרים</footer></blockquote>
+<blockquote class="rv rvq" style="margin:0;display:grid;gap:18px;align-content:start;padding-top:26px;border-top:1px solid rgba(15,34,51,.12)"><p style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(18px,1.5vw,23px);line-height:1.5">״הצעת המחיר הייתה מפורטת עד הפריט האחרון, ולא השתנתה בסוף.״</p><footer style="font-size:14px;color:#5C7183">משפחת אזולאי · בית פרטי</footer></blockquote>
+<blockquote class="rv rvq" style="margin:0;display:grid;gap:18px;align-content:start;padding-top:26px;border-top:1px solid rgba(15,34,51,.12)"><p style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(18px,1.5vw,23px);line-height:1.5">״הטיח יצא חלק לגמרי. עברתי עם פנס על הקירות ולא מצאתי כלום.״</p><footer style="font-size:14px;color:#5C7183">רועי · שיפוץ מטבח וסלון</footer></blockquote>
+</div>
+</div>
+</section>
+
+<section id="areas" style="background:#0F2233;position:relative;z-index:0;isolation:isolate">
+<div style="position:relative">
+<div ref="{{ mapRef }}" style="width:100%;height:clamp(360px,52vh,480px)"></div>
+<div style="position:absolute;bottom:0;right:0;left:0;z-index:500;padding:clamp(20px,3vw,32px) clamp(20px,4.5vw,72px);background:linear-gradient(to top,rgba(15,34,51,.94),rgba(15,34,51,0));display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;pointer-events:none">
+<div>
+<h2 class="rv" style="margin:0 0 6px;font-family:'Suez One',serif;font-weight:400;font-size:clamp(22px,2.2vw,32px);color:#F2EADF">אזורי שירות</h2>
+<div ref="{{ areaLabelRef }}" style="font-size:14px;color:#C9AE87;font-weight:600;margin-bottom:14px;min-height:20px;transition:opacity 260ms cubic-bezier(.16,1,.3,1)">תל אביב והמרכז</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<span data-area-chip="0" style="font-size:14px;padding:9px 18px;border-radius:999px;background:rgba(242,234,223,.1);color:#F2EADF;box-shadow:inset 0 0 0 1px rgba(242,234,223,.22);transition:background 320ms,box-shadow 320ms">תל אביב והמרכז</span>
+<span data-area-chip="1" style="font-size:14px;padding:9px 18px;border-radius:999px;background:rgba(242,234,223,.1);color:#F2EADF;box-shadow:inset 0 0 0 1px rgba(242,234,223,.22);transition:background 320ms,box-shadow 320ms">השרון</span>
+<span data-area-chip="2" style="font-size:14px;padding:9px 18px;border-radius:999px;background:rgba(242,234,223,.1);color:#F2EADF;box-shadow:inset 0 0 0 1px rgba(242,234,223,.22);transition:background 320ms,box-shadow 320ms">השפלה</span>
+<span data-area-chip="3" style="font-size:14px;padding:9px 18px;border-radius:999px;background:rgba(242,234,223,.1);color:#F2EADF;box-shadow:inset 0 0 0 1px rgba(242,234,223,.22);transition:background 320ms,box-shadow 320ms">גוש דן</span>
+</div>
+</div>
+<div style="display:flex;gap:12px">
+<div class="area-thumb" data-area-thumb="0"><img src="assets/frames/area-center.jpg" alt="תל אביב והמרכז"/></div>
+<div class="area-thumb" data-area-thumb="1"><img src="assets/frames/area-sharon.jpg" alt="השרון"/></div>
+<div class="area-thumb" data-area-thumb="2"><img src="assets/frames/area-shfela.jpg" alt="השפלה"/></div>
+<div class="area-thumb" data-area-thumb="3"><img src="assets/frames/area-gushdan.jpg" alt="גוש דן"/></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" style="background:#FFFFFF;padding:clamp(80px,11vh,140px) 0">
+<div style="max-width:1040px;margin:0 auto;padding:0 clamp(20px,4.5vw,72px)">
+<div class="contact-grid" style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.8fr);border-radius:16px;overflow:hidden;box-shadow:0 22px 50px rgba(15,34,51,.14)">
+<div style="position:relative;background:#FFFFFF;overflow:hidden">
+<div style="position:absolute;inset:0;overflow:hidden"><div style="position:absolute;top:-6%;left:0;width:140%;height:112%;background:url('assets/frames/sky-01.jpg') center/cover no-repeat;animation:pan-soft 90s ease-in-out infinite alternate;will-change:transform"></div></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.26) 45%,rgba(255,255,255,.44))"></div>
+<div style="position:relative;padding:clamp(28px,4vw,44px)">
+<div class="rv" style="font-size:12px;letter-spacing:.24em;font-weight:600;color:#C9AE87;margin-bottom:16px">בואו נתחיל</div>
+<h2 class="rv" style="transition-delay:90ms;margin:0 0 12px;font-family:'Suez One',serif;font-weight:400;font-size:clamp(24px,2.6vw,36px);line-height:1.2;color:#0F2233">השאירו פרטים ונחזור אליכם באותו היום.</h2>
+<p class="rv" style="transition-delay:170ms;margin:0 0 28px;font-size:15px;line-height:1.7;color:#284559">פגישת אפיון ראשונית ללא עלות, באזור המרכז והשפלה.</p>
+<form class="rv" style="transition-delay:250ms;display:grid;gap:20px" onSubmit="{{ onSubmit }}" onInput="{{ onFormInput }}" onChange="{{ onFormInput }}">
+<div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div class="field"><label for="cf-name">שם מלא</label><input id="cf-name" type="text" placeholder="איך קוראים לך?"/></div>
+<div class="field"><label for="cf-phone">טלפון</label><input id="cf-phone" type="tel" placeholder="050-000-0000"/></div>
+</div>
+<div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div class="field"><label for="cf-type">סוג העבודה</label><select id="cf-type"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
+<div class="field"><label for="cf-when">מתי תרצו להתחיל</label><select id="cf-when"><option>בהקדם האפשרי</option><option>תוך חודש</option><option>עוד 2-3 חודשים</option><option>עדיין בודקים</option></select></div>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:6px">
+<a ref="{{ mailBtnRef }}" href="mailto:barakfid88@gmail.com" onClick="{{ onMailClick }}" class="cta"><span class="stack"><i>שליחה במייל</i><i>barakfid88@gmail.com</i></span></a>
+<a ref="{{ waBtnRef }}" href="https://wa.me/972587808908" target="_blank" rel="noopener" onClick="{{ onWhatsapp }}" class="cta" style="background:#0F2233"><span class="stack"><i>שליחה בוואטסאפ</i><i>058-780-8908</i></span></a>
+</div>
+<span ref="{{ formNoteRef }}" style="font-size:13px;color:#284559;min-height:18px"></span>
+</form>
+</div>
+</div>
+<div style="background:#0F2233;padding:clamp(28px,4vw,44px);display:grid;align-content:center;gap:18px">
+<h3 class="rv" style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:21px;color:#F2EADF">מעדיפים לדבר?</h3>
+<p style="margin:0;font-size:14px;line-height:1.7;color:rgba(242,234,223,.72)">אנחנו זמינים בוואטסאפ ובטלפון, ראשון עד חמישי 08:00–18:00.</p>
+<a href="mailto:barakfid88@gmail.com" style="font-size:14px;color:rgba(242,234,223,.72);text-decoration:none;direction:ltr" style-hover="color:#FFFFFF">barakfid88@gmail.com</a>
+<a class="rv" href="tel:+972587808908" style="transition-delay:170ms;font-family:'Suez One',serif;font-size:22px;color:#F2EADF;direction:ltr;text-decoration:none" style-hover="color:#FFFFFF">058-780-8908</a>
+<a href="https://wa.me/972587808908" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;background:#F2EADF;color:#0F2233;font-size:14px;font-weight:600;text-decoration:none;width:fit-content;transition:transform 220ms cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-2px)"><span style="width:9px;height:9px;border-radius:50%;background:#8FBF7F;box-shadow:0 0 0 3px rgba(143,191,127,.3)"></span>וואטסאפ מהיר</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="background:#0F2233;color:#F2EADF;padding:clamp(72px,10vh,124px) 0 42px">
+<div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4.5vw,72px);display:grid;gap:clamp(40px,6vh,72px)">
+<div class="footer-cta-grid" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end">
+<h2 class="rv" style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:clamp(28px,3.4vw,54px);line-height:1.16">מתכננים שיפוץ?<br>בואו נדבר לפני שמפרקים משהו.</h2>
+<div class="rv" style="transition-delay:140ms;display:grid;gap:18px;justify-items:start">
+<a href="#contact" class="cta cta-on"><span class="stack"><i>לקבלת הצעת מחיר</i><i>דברו איתנו עוד היום</i></span></a>
+<span style="font-size:14px;color:rgba(242,234,223,.6)">מגיעים לפגישת אפיון ללא עלות, באזור המרכז והשפלה.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(242,234,223,.16)">
+<span style="font-family:'Oi',cursive;font-size:clamp(20px,2vw,30px);direction:ltr;color:#F2EADF">COLORS OF HAVEN</span>
+<nav style="display:flex;gap:22px;font-size:14px;flex-wrap:wrap"><a href="#services" style="color:rgba(242,234,223,.75);text-decoration:none" style-hover="color:#FFFFFF">שירותים</a><a href="#projects" style="color:rgba(242,234,223,.75);text-decoration:none" style-hover="color:#FFFFFF">פרויקטים</a><a href="#how" style="color:rgba(242,234,223,.75);text-decoration:none" style-hover="color:#FFFFFF">איך זה עובד</a><a href="#testimonials" style="color:rgba(242,234,223,.75);text-decoration:none" style-hover="color:#FFFFFF">המלצות</a><a href="#areas" style="color:rgba(242,234,223,.75);text-decoration:none" style-hover="color:#FFFFFF">אזורי שירות</a><a href="#contact" style="color:rgba(242,234,223,.75);text-decoration:none" style-hover="color:#FFFFFF">צור קשר</a></nav>
+</div>
+</div>
+</footer>
+</div>
+</sc-if>
+
+<sc-if value="{{ isMobile }}">
+<div ref="{{ sheetRef }}" class="menu-sheet" dir="rtl" onClick="{{ onSheetClick }}">
+<div class="menu-panel">
+<nav><a href="#top">בית</a><a href="#services">שירותים</a><a href="#projects">פרויקטים</a><a href="#how">איך זה עובד</a><a href="#testimonials">המלצות</a><a href="#areas">אזורי שירות</a><a href="#contact">צור קשר</a></nav>
+<div class="foot"><a href="tel:+972587808908" style="direction:ltr">058-780-8908</a><a href="mailto:barakfid88@gmail.com" style="direction:ltr">barakfid88@gmail.com</a></div>
+</div>
+</div>
+<a ref="{{ waRef }}" href="https://wa.me/972587808908" target="_blank" rel="noopener" class="wa-fab in" dir="rtl"><span class="dot"></span>וואטסאפ מהיר</a>
+
+<div id="top" dir="rtl" style="background:#FFFFFF;font-family:'Rubik',sans-serif">
+
+<div style="position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 16px;background:rgba(15,34,51,.95);backdrop-filter:blur(10px)">
+<button type="button" onClick="{{ onMenu }}" aria-label="תפריט" style="display:flex;align-items:center;background:none;border:none;padding:6px;cursor:pointer">
+<span style="display:grid;gap:4px"><span style="width:18px;height:1.5px;background:#F2EADF;display:block"></span><span style="width:18px;height:1.5px;background:#F2EADF;display:block"></span><span style="width:18px;height:1.5px;background:#F2EADF;display:block"></span></span>
+</button>
+<span style="font-family:'Oi',cursive;font-size:14px;color:#F2EADF;direction:ltr">COLORS OF HAVEN</span>
+<a href="tel:+972587808908" aria-label="חייגו" style="width:32px;height:32px;border-radius:50%;background:rgba(242,234,223,.14);display:flex;align-items:center;justify-content:center">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.7 3.6.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.7 3.6.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#F2EADF" stroke-width="1.5"></path></svg>
+</a>
+</div>
+
+<div style="position:relative;height:70vh;min-height:420px;max-height:620px;overflow:hidden">
+<video ref="{{ mHeroVideoRef }}" src="assets/video/journey.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" webkit-playsinline="" preload="auto" poster="assets/frames/villa.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,20,28,.12),rgba(12,20,28,.08) 40%,rgba(12,20,28,.74))"></div>
+<div style="position:absolute;top:22px;right:20px;left:20px;font-size:11px;letter-spacing:.22em;font-weight:600;color:rgba(242,234,223,.85)">קבלן שיפוצים כללי</div>
+<div style="position:absolute;bottom:28px;right:20px;left:20px;display:grid;gap:16px">
+<h1 style="margin:0;font-family:'Oi',cursive;font-weight:400;font-size:38px;line-height:1.08;color:#FFFFFF;direction:ltr;text-shadow:0 6px 24px rgba(15,34,51,.4)">COLORS<br/>OF HAVEN</h1>
+<p style="margin:0;font-size:15px;line-height:1.6;color:rgba(242,234,223,.92);max-width:26ch">מהחלום שבעננים — עד המפתח שביד.</p>
+<a href="#contact" style="justify-self:start;height:48px;padding:0 26px;border-radius:6px;display:flex;align-items:center;background:#F2EADF;color:#0F2233;font-size:14px;font-weight:600;text-decoration:none;font-family:'Rubik',sans-serif">לקבלת הצעת מחיר</a>
+</div>
+</div>
+
+<div style="padding:40px 20px 8px;display:grid;gap:14px">
+<div style="font-size:11px;letter-spacing:.22em;font-weight:600;color:#C9AE87">קבלן שיפוצים כללי</div>
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:25px;line-height:1.28;color:#0F2233">קבלן אחד לוקח אחריות על כל השיפוץ.</h2>
+<p style="margin:0;font-size:15px;line-height:1.72;color:#284559">אנחנו מנהלים את הפרויקט מהיום הראשון ועד מסירת המפתח — הריסה, אינסטלציה, חשמל, ריצוף, טיח וצבע. בעל בית אחד, איש קשר אחד, לוח זמנים אחד שאפשר לסמוך עליו.</p>
+</div>
+
+<div id="services" style="background:#F4F6F8;padding:40px 20px;display:grid;gap:18px;margin-top:16px">
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:23px;color:#0F2233">מה אנחנו עושים</h2>
+<div style="display:grid;gap:14px">
+<sc-for list="{{ mServices }}" as="svc" hint-placeholder-count="4">
+<article class="msvc" onClick="{{ svc.toggle }}">
+<img src="{{ svc.img }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ svc.imgOpacity }};z-index:0"/>
+<div class="ov" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,34,51,.3),rgba(15,34,51,.86));opacity:{{ svc.imgOpacity }};z-index:1"></div>
+<span style="position:relative;z-index:2;font-family:'Suez One',serif;font-size:12px;color:{{ svc.numColor }}">{{ svc.n }}</span>
+<h3 style="position:relative;z-index:2;margin:0;font-family:'Suez One',serif;font-weight:400;font-size:19px;color:{{ svc.titleColor }}">{{ svc.title }}</h3>
+<p style="position:relative;z-index:2;margin:0;font-size:14px;line-height:1.65;color:{{ svc.descColor }}">{{ svc.desc }}</p>
+</article>
+</sc-for>
+</div>
+</div>
+
+<div id="how" style="padding:44px 20px;display:grid;gap:26px;background:#FFFFFF">
+<div style="display:grid;gap:10px">
+<div style="font-size:11px;letter-spacing:.22em;font-weight:600;color:#C9AE87">איך זה עובד</div>
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:23px;color:#0F2233">מהפגישה הראשונה ועד המפתח ביד.</h2>
+</div>
+<div ref="{{ mBucketHostRef }}" style="position:relative;height:230px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,#F4F6F8,#EDEFF2)">
+<canvas ref="{{ mBucketRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+</div>
+<div style="display:grid;gap:22px">
+<sc-for list="{{ mSteps }}" as="st" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:auto 1fr;gap:14px">
+<span style="font-family:'Suez One',serif;font-size:20px;color:#C9AE87">{{ st.n }}</span>
+<div><h3 style="margin:0 0 6px;font-family:'Suez One',serif;font-weight:400;font-size:17px;color:#0F2233">{{ st.title }}</h3><p style="margin:0;font-size:14px;line-height:1.65;color:#284559">{{ st.desc }}</p></div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div id="projects" style="background:#0F2233;padding:40px 0 44px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding:0 20px;margin-bottom:18px">
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:21px;color:#F2EADF">פרויקטים</h2>
+<span style="font-size:11px;letter-spacing:.18em;font-weight:600;color:rgba(242,234,223,.55)">גררו ←</span>
+</div>
+<div style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 4px;-webkit-overflow-scrolling:touch">
+<sc-for list="{{ mProjects }}" as="proj" hint-placeholder-count="6">
+<figure style="margin:0;flex:0 0 220px;scroll-snap-align:start;display:grid;gap:10px">
+<span style="display:block;border-radius:8px;overflow:hidden;aspect-ratio:4/5"><img src="{{ proj.img }}" alt="" style="display:block;width:100%;height:100%;object-fit:cover"/></span>
+<figcaption style="font-size:13px;line-height:1.5;color:rgba(242,234,223,.8)">{{ proj.title }}<br/><span style="color:rgba(242,234,223,.45)">{{ proj.sub }}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+
+<div id="testimonials" style="padding:44px 20px;background:#FFFFFF;display:grid;gap:22px">
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:23px;color:#0F2233">המלצות</h2>
+<div style="display:grid;gap:22px">
+<sc-for list="{{ mTestimonials }}" as="t" hint-placeholder-count="3">
+<blockquote style="margin:0;padding-top:18px;border-top:1px solid rgba(15,34,51,.12);display:grid;gap:12px">
+<p style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:17px;line-height:1.5;color:#0F2233">{{ t.q }}</p>
+<footer style="font-size:13px;color:#5C7183">{{ t.a }}</footer>
+</blockquote>
+</sc-for>
+</div>
+</div>
+
+<div id="areas" style="background:#0F2233;padding:40px 20px 44px;display:grid;gap:16px">
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:21px;color:#F2EADF">אזורי שירות</h2>
+<div style="border-radius:10px;overflow:hidden;aspect-ratio:4/3;position:relative;box-shadow:0 16px 34px rgba(0,0,0,.3)">
+<sc-for list="{{ mAreas }}" as="ar" hint-placeholder-count="4">
+<img src="{{ ar.img }}" alt="{{ ar.label }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ ar.opacity }};transition:opacity .5s cubic-bezier(.16,1,.3,1)"/>
+</sc-for>
+</div>
+<div style="font-size:13px;color:#C9AE87;font-weight:600">{{ mActiveAreaLabel }}</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ mAreas }}" as="ar" hint-placeholder-count="4">
+<span onClick="{{ ar.select }}" style="font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer;background:{{ ar.chipBg }};color:#F2EADF;box-shadow:{{ ar.chipShadow }}">{{ ar.label }}</span>
+</sc-for>
+</div>
+</div>
+
+<div id="contact" style="position:relative;overflow:hidden;padding:44px 20px;background:#FFFFFF;display:grid;gap:24px">
+<img src="assets/frames/sky-01.jpg" alt="" style="position:absolute;top:0;left:0;right:0;height:280px;object-fit:cover;opacity:.5;z-index:0"/>
+<div style="position:absolute;top:0;left:0;right:0;height:280px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 92%);z-index:0"></div>
+<div style="position:relative;z-index:1;display:grid;gap:10px">
+<div style="font-size:11px;letter-spacing:.22em;font-weight:600;color:#C9AE87">בואו נתחיל</div>
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:22px;line-height:1.32;color:#0F2233">השאירו פרטים ונחזור אליכם באותו היום.</h2>
+<p style="margin:0;font-size:14px;line-height:1.65;color:#284559">פגישת אפיון ראשונית ללא עלות, באזור המרכז והשפלה.</p>
+</div>
+<form style="position:relative;z-index:1;display:grid;gap:16px" onSubmit="{{ onSubmit }}" onInput="{{ onFormInput }}" onChange="{{ onFormInput }}">
+<div style="display:grid;gap:8px"><label for="cf-name" style="font-size:13px;color:#284559;font-weight:500">שם מלא</label><input id="cf-name" type="text" placeholder="איך קוראים לך?" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
+<div style="display:grid;gap:8px"><label for="cf-phone" style="font-size:13px;color:#284559;font-weight:500">טלפון</label><input id="cf-phone" type="tel" placeholder="050-000-0000" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
+<div style="display:grid;gap:8px"><label for="cf-type" style="font-size:13px;color:#284559;font-weight:500">סוג העבודה</label><select id="cf-type" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<a ref="{{ mailBtnRef }}" href="mailto:barakfid88@gmail.com" onClick="{{ onMailClick }}" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;height:50px;border-radius:6px;background:#123A5C;color:#F2EADF;font-size:14px;font-weight:600;text-decoration:none">שליחה במייל</a>
+<a ref="{{ waBtnRef }}" href="https://wa.me/972587808908" target="_blank" rel="noopener" onClick="{{ onWhatsapp }}" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;height:50px;border-radius:6px;background:#0F2233;color:#F2EADF;font-size:14px;font-weight:600;text-decoration:none">וואטסאפ</a>
+</div>
+<span ref="{{ formNoteRef }}" style="font-size:13px;color:#284559;min-height:18px"></span>
+</form>
+<div style="position:relative;z-index:1;background:#0F2233;border-radius:10px;padding:22px;display:grid;gap:12px">
+<h3 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:18px;color:#F2EADF">מעדיפים לדבר?</h3>
+<p style="margin:0;font-size:13px;line-height:1.6;color:rgba(242,234,223,.72)">אנחנו זמינים בוואטסאפ ובטלפון, ראשון עד חמישי 08:00–18:00.</p>
+<a href="tel:+972587808908" style="font-family:'Suez One',serif;font-size:19px;color:#F2EADF;direction:ltr;text-decoration:none">058-780-8908</a>
+</div>
+</div>
+
+<footer style="background:#0F2233;color:#F2EADF;padding:44px 20px 32px;display:grid;gap:26px">
+<h2 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:21px;line-height:1.3">מתכננים שיפוץ?<br/>בואו נדבר לפני שמפרקים משהו.</h2>
+<a href="#contact" style="justify-self:start;height:48px;padding:0 26px;border-radius:6px;display:flex;align-items:center;background:#F2EADF;color:#0F2233;font-size:14px;font-weight:600;text-decoration:none;font-family:'Rubik',sans-serif">לקבלת הצעת מחיר</a>
+<div style="display:flex;align-items:center;justify-content:space-between;padding-top:22px;border-top:1px solid rgba(242,234,223,.16)">
+<span style="font-family:'Oi',cursive;font-size:16px;direction:ltr">COLORS OF HAVEN</span>
+<span style="font-size:12px;color:rgba(242,234,223,.5)">© 2026</span>
+</div>
+</footer>
+
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;scrollVh&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:380,&quot;min&quot;:260,&quot;max&quot;:900,&quot;step&quot;:20,&quot;unit&quot;:&quot;vh&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;גלילה&quot;},&quot;damping&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.075,&quot;min&quot;:0.02,&quot;max&quot;:0.2,&quot;step&quot;:0.005,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;גלילה&quot;},&quot;cloudParallax&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2.5,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;עננים&quot;},&quot;videoStart&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.03,&quot;min&quot;:0,&quot;max&quot;:0.3,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;גלילה&quot;}}">
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.wrapRef=React.createRef();this.cloudsRef=React.createRef();this.cloudARef=React.createRef();this.cloudBRef=React.createRef();this.skyRef=React.createRef();
+    this.videoRef=React.createRef();this.titleRef=React.createRef();this.endRef=React.createRef();this.hintRef=React.createRef();
+    this.railWrapRef=React.createRef();this.railRef=React.createRef();this.svcRef=React.createRef();this.isleRef=React.createRef();this.heroNavRef=React.createRef();this.railHintRef=React.createRef();
+    this.howRef=React.createRef();this.stepsRef=React.createRef();this.bucketRef=React.createRef();this.waRef=React.createRef();this.mapRef=React.createRef();this.areaLabelRef=React.createRef();this.formNoteRef=React.createRef();this.mailBtnRef=React.createRef();this.waBtnRef=React.createRef();this.sheetRef=React.createRef();this.menuOpen=false;
+    this.bucketP=0;this.bucketReady=false;
+    this.seekable=false;this.eased=0;this.mx=0;this.my=0;this.tmx=0;this.tmy=0;this.unlocked=false;this.px=null;this.py=null;this.rvx=50;this.rvy=50;this.rvr=0;this.rail=0;
+    this.mBucketRef=React.createRef();this.mBucketHostRef=React.createRef();this.mBucketPlayed=false;
+    this.mHeroVideoRef=React.createRef();this.mHeroVideoStarted=false;
+    this.state={isMobile:this.detectMobile(),mActiveSvc:null,mActiveArea:0};
+  }
+  detectMobile(){try{return window.matchMedia('(max-width:767px)').matches;}catch(e){return false;}}
+  get cfg(){return{scrollVh:this.props.scrollVh??380,damping:this.props.damping??0.075,cloudParallax:this.props.cloudParallax??1,fadeStart:this.props.videoStart??0.03};}
+  componentDidMount(){
+    this.reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.coarse=window.matchMedia('(pointer: coarse)').matches;
+    const rh=this.railHintRef.current;if(rh&&this.coarse)rh.textContent='החליקו הצידה לגלריה';
+    this.applyHeight();
+    this.onMove=e=>{const t=e.touches&&e.touches[0]?e.touches[0]:e;if(t.clientX==null)return;this.px=t.clientX;this.py=t.clientY;this.tmx=(t.clientX/innerWidth-.5)*2;this.tmy=(t.clientY/innerHeight-.5)*2;};
+    this.onTouch=()=>this.unlock();
+    addEventListener('pointermove',this.onMove,{passive:true,capture:true});
+    addEventListener('mousemove',this.onMove,{passive:true,capture:true});
+    addEventListener('touchmove',this.onMove,{passive:true,capture:true});
+    document.addEventListener('pointermove',this.onMove,{passive:true,capture:true});
+    this.onKey=e=>{if(e.key==='Escape'&&this.menuOpen)this.setMenu(false);};
+    addEventListener('keydown',this.onKey);
+    addEventListener('touchstart',this.onTouch,{passive:true});
+    addEventListener('wheel',this.onTouch,{passive:true});
+    const v=this.videoRef.current;
+    if(v){
+      v.muted=true;v.defaultMuted=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');
+      const armSeek=()=>{
+        if(!v.duration||this.seekable)return;
+        v.addEventListener('seeked',()=>{this.seekable=true;try{v.pause()}catch(_){}} ,{once:true});
+        try{v.currentTime=0.05;}catch(_){}
+      };
+      if(v.readyState>=1)armSeek();
+      v.addEventListener('loadedmetadata',armSeek,{once:true});
+      v.addEventListener('loadeddata',armSeek,{once:true});
+      v.addEventListener('canplay',armSeek,{once:true});
+      v.load();
+      const src=v.getAttribute('data-src');
+      setTimeout(()=>{
+        fetch(src).then(res=>res.ok?res.blob():Promise.reject()).then(b=>{
+          this.blobUrl=URL.createObjectURL(b);v.src=this.blobUrl;
+          v.addEventListener('loadeddata',()=>{this.seekable=true;try{v.pause()}catch(_){}} ,{once:true});
+          v.load();
+        }).catch(()=>{});
+      },0);
+    }
+    this.onSpot=e=>{const b=e.target.closest&&e.target.closest('.cta');if(!b)return;const r=b.getBoundingClientRect();b.style.setProperty('--sx',(e.clientX-r.left)+'px');b.style.setProperty('--sy',(e.clientY-r.top)+'px');};
+    document.addEventListener('pointerover',this.onSpot,{passive:true});
+    const sv=this.svcRef.current;
+    if(sv){sv.classList.remove('svc-in');
+      this.io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)sv.classList.add('svc-in');else if(en.boundingClientRect.top>0)sv.classList.remove('svc-in');})},{threshold:0.15,rootMargin:'0px 0px -12% 0px'});
+      this.io.observe(sv);}
+
+    this.rvSeen=new WeakSet();
+    this.io3=new IntersectionObserver(es=>{es.forEach(en=>{
+      if(en.isIntersecting)en.target.classList.add('in');
+      else if(en.boundingClientRect.top>0)en.target.classList.remove('in');
+    })},{threshold:0,rootMargin:'0px 0px -6% 0px'});
+    this.armReveals();
+    setTimeout(()=>this.initBucket(),0);
+    this.initMap();
+    this.navIds=['top','services','projects','how','testimonials','areas','contact'];
+    this.io4=new IntersectionObserver(()=>this.syncHere(),{threshold:0,rootMargin:'-30% 0px -30% 0px'});
+    setTimeout(()=>{this.navIds.forEach(id=>{const el=document.getElementById(id);if(el)this.io4.observe(el);});this.syncHere();},120);
+    this.rvMo=new MutationObserver(()=>{clearTimeout(this.rvT);this.rvT=setTimeout(()=>this.armReveals(),40);});
+    this.rvMo.observe(document.body,{childList:true,subtree:true});
+    setTimeout(()=>this.armReveals(),120);
+    setTimeout(()=>this.armReveals(),600);
+    this.raf=requestAnimationFrame(this.tick);
+    this.onResizeMobile=()=>{
+      const m=this.detectMobile();
+      if(m!==this.state.isMobile)this.setState({isMobile:m});
+    };
+    addEventListener('resize',this.onResizeMobile);
+    if(this.state.isMobile){this.mPreloadBucketAssets();this.mSetupBucketRetry(0);this.mStartHeroVideoRetry(0);}
+  }
+  componentDidUpdate(prevProps,prevState){
+    this.applyHeight();this.armReveals();
+    if(prevState&&prevState.isMobile!==this.state.isMobile){
+      if(this.mBucketIO){this.mBucketIO.disconnect();this.mBucketIO=null;}
+      if(this.mBucketRaf)cancelAnimationFrame(this.mBucketRaf);
+      if(this.mBucketResize)removeEventListener('resize',this.mBucketResize);
+      if(this.mBucketScene&&this.mBucketScene.renderer)this.mBucketScene.renderer.dispose();
+      this.mBucketScene=null;this.mBucketPreloading=false;
+      this.mBucketPlayed=false;this.mBucketStarted=false;this.mBucketDropStarted=false;this.mBucketWantsPlay=false;
+      this.mHeroVideoStarted=false;
+      if(this.state.isMobile){this.mPreloadBucketAssets();this.mSetupBucketRetry(0);this.mStartHeroVideoRetry(0);}
+    }
+  }
+  mStartHeroVideoRetry(attempt){
+    if(this.mHeroVideoStarted)return;
+    const v=this.mHeroVideoRef.current;
+    if(!v){if(attempt<30)setTimeout(()=>this.mStartHeroVideoRetry(attempt+1),150);return;}
+    this.mHeroVideoStarted=true;
+    v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');
+    try{v.currentTime=0;}catch(e){}
+    const tryPlay=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+    if(v.readyState>=1)tryPlay();
+    v.addEventListener('loadedmetadata',()=>{try{v.currentTime=0;}catch(e){}tryPlay();},{once:true});
+    v.load();
+  }
+  mSetupBucketRetry(attempt){
+    if(this.mBucketIO)return;
+    const target=this.mBucketHostRef.current;
+    if(!target){if(attempt<30)setTimeout(()=>this.mSetupBucketRetry(attempt+1),150);return;}
+    this.mBucketIO=new IntersectionObserver(entries=>{
+      entries.forEach(en=>{if(en.isIntersecting&&!this.mBucketPlayed){this.mBucketPlayed=true;this.mStartBucketDrop();}});
+    },{threshold:0.3});
+    this.mBucketIO.observe(target);
+  }
+  mPreloadBucketAssets(){
+    if(this.mBucketPreloading||this.mBucketScene)return;
+    this.mBucketPreloading=true;
+    (async()=>{
+      let THREE,GLTFLoader;
+      try{
+        [THREE,{GLTFLoader}]=await Promise.all([
+          import('https://esm.sh/three@0.160.0'),
+          import('https://esm.sh/three@0.160.0/examples/jsm/loaders/GLTFLoader.js')
+        ]);
+      }catch(err){this.mBucketPreloading=false;return;}
+      const canvas=this.mBucketRef.current;if(!canvas){this.mBucketPreloading=false;return;}
+      try{
+        const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,failIfMajorPerformanceCaveat:false});
+        renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+        const scene=new THREE.Scene();
+        const camera=new THREE.PerspectiveCamera(30,1,0.1,100);
+        camera.position.set(0.2,1.5,6.2);camera.lookAt(0,0.5,0);
+        scene.add(new THREE.HemisphereLight(0xffffff,0x1b3550,1.15));
+        const key=new THREE.DirectionalLight(0xfff3e0,1.7);key.position.set(3.4,5.2,3.6);scene.add(key);
+        const rim=new THREE.DirectionalLight(0xbfe0ff,0.6);rim.position.set(-3,2,-3);scene.add(rim);
+        const sc=document.createElement('canvas');sc.width=256;sc.height=256;
+        const sctx=sc.getContext('2d');const g=sctx.createRadialGradient(128,128,0,128,128,128);
+        g.addColorStop(0,'rgba(15,34,51,.5)');g.addColorStop(0.6,'rgba(15,34,51,.22)');g.addColorStop(1,'rgba(15,34,51,0)');
+        sctx.fillStyle=g;sctx.fillRect(0,0,256,256);
+        const shadowTex=new THREE.CanvasTexture(sc);
+        const shadowMesh=new THREE.Mesh(new THREE.PlaneGeometry(2.6,2.6),new THREE.MeshBasicMaterial({map:shadowTex,transparent:true,depthWrite:false}));
+        shadowMesh.rotation.x=-Math.PI/2;shadowMesh.material.opacity=0;scene.add(shadowMesh);
+        const rig=new THREE.Group();rig.position.y=5.2;scene.add(rig);
+        const splatN=26;const splatGeo=new THREE.CircleGeometry(1,20);
+        const splatMat=new THREE.MeshBasicMaterial({color:0xC9AE87,transparent:true,depthWrite:false});
+        const splats=new THREE.InstancedMesh(splatGeo,splatMat,splatN);
+        splats.rotation.x=-Math.PI/2;splats.position.y=0.002;splats.count=0;scene.add(splats);
+        const splatData=[];
+        for(let i=0;i<splatN;i++){const a=Math.random()*Math.PI*2,d=0.15+Math.random()*1.3;splatData.push({x:Math.cos(a)*d,z:Math.sin(a)*d,s:0.05+Math.random()*0.16});}
+        const dropN=16;const dropGeo=new THREE.SphereGeometry(1,8,8);dropGeo.scale(0.62,1,0.62);
+        const dropMat=new THREE.MeshStandardMaterial({color:0xC9AE87,roughness:0.28,metalness:0.08});
+        const drops=new THREE.InstancedMesh(dropGeo,dropMat,dropN);drops.count=0;scene.add(drops);
+        const dropData=[];
+        for(let i=0;i<dropN;i++){const a=Math.random()*Math.PI*2,sp=0.5+Math.random()*1.05;dropData.push({vx:Math.cos(a)*sp*0.4,vz:Math.sin(a)*sp*0.4,vy:0.28+Math.random()*0.5,s:0.022+Math.random()*0.026,t0:Math.random()*0.18});}
+        const resize=()=>{const w=canvas.clientWidth||1,h=canvas.clientHeight||1;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.render(scene,camera);};
+        resize();this.mBucketResize=resize;addEventListener('resize',resize);
+        canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(this.mBucketRaf)cancelAnimationFrame(this.mBucketRaf);},{passive:false});
+        canvas.addEventListener('webglcontextrestored',()=>{resize();});
+        this.mBucketScene={renderer,scene,camera,rig,shadowMesh,splats,splatData,drops,dropData,mtx:new THREE.Matrix4(),tmpV:new THREE.Vector3(),modelReady:false};
+        this.mBucketPreloading=false;
+        const loadModel=attempt=>{
+          new GLTFLoader().load('assets/models/paint-bucket.glb?try='+attempt,gltf=>{
+            const obj=gltf.scene;
+            const box=new THREE.Box3().setFromObject(obj);
+            const size=box.getSize(new THREE.Vector3());const center=box.getCenter(new THREE.Vector3());
+            const scale=1.7/Math.max(size.x,size.y,size.z,0.001);
+            obj.scale.setScalar(scale);
+            obj.position.set(-center.x*scale,-box.min.y*scale,-center.z*scale);
+            rig.add(obj);
+            this.mBucketScene.modelReady=true;
+            if(this.mBucketWantsPlay)this.mStartBucketDrop();
+          },undefined,()=>{if(attempt<2)loadModel(attempt+1);});
+        };
+        loadModel(0);
+        if(this.mBucketWantsPlay)this.mStartBucketDrop();
+      }catch(err){this.mBucketPreloading=false;}
+    })();
+  }
+  mStartBucketDrop(){
+    if(this.mBucketDropStarted)return;
+    const sc=this.mBucketScene;
+    if(!sc){this.mBucketWantsPlay=true;return;}
+    this.mBucketDropStarted=true;
+    const{renderer,scene,camera,rig,shadowMesh,splats,splatData,drops,dropData,mtx,tmpV}=sc;
+    const smooth=x=>x*x*(3-2*x);
+    const seg=(x,a,b)=>Math.max(0,Math.min(1,(x-a)/(b-a)));
+    const start=performance.now();const dur=1600;
+    const tick=now=>{
+      const t=Math.min(1,(now-start)/dur);
+      const dropH=5.2;
+      const fallT=Math.min(1,t/0.7);
+      let y=(1-smooth(fallT))*dropH;
+      if(t>0.7){const bt=(t-0.7)/0.3;const bounce=Math.sin(Math.min(1,bt)*Math.PI)*0.22*(1-bt);y=-bounce;}
+      y=Math.max(y,-0.001);
+      rig.position.y=y;rig.rotation.y=(1-t)*2.4+t*0.35;rig.rotation.z=Math.sin((1-t)*4)*0.18*(1-t);
+      const near=1-Math.min(1,y/dropH);
+      shadowMesh.scale.setScalar(0.5+near*0.6);shadowMesh.material.opacity=0.15+near*0.55;
+      if(t>0.68){
+        const bt=seg(t,0.68,1);const n=Math.min(splatData.length,Math.ceil(bt*splatData.length));
+        for(let i=0;i<n;i++){const d=splatData[i];const grow=Math.max(0,Math.min(1,(bt*splatData.length-i)*2.4));const s=d.s*(0.3+0.7*grow);mtx.makeScale(s,s,1);mtx.setPosition(d.x,d.z,0);splats.setMatrixAt(i,mtx);}
+        splats.count=n;splats.instanceMatrix.needsUpdate=true;splats.material.opacity=0.55;
+      }
+      if(t>0.6&&t<0.98){
+        const lt=seg(t,0.6,0.98);const n=Math.ceil(lt*dropData.length);let vis=0;
+        for(let i=0;i<n;i++){const d=dropData[i];const dt=Math.max(0,lt-d.t0);if(dt<=0)continue;
+          const gy=1.4+d.vy*dt-4.6*dt*dt;
+          if(gy<-0.05)continue;
+          const fade=gy<0.12?Math.max(0.15,gy/0.12):1;
+          tmpV.set(d.vx*dt,Math.max(gy,0.006),d.vz*dt);
+          mtx.makeScale(d.s*fade,d.s*fade,d.s*fade);mtx.setPosition(tmpV);drops.setMatrixAt(vis,mtx);vis++;}
+        drops.count=vis;drops.instanceMatrix.needsUpdate=true;
+      } else if(drops.count>0){drops.count=0;drops.instanceMatrix.needsUpdate=true;}
+      renderer.render(scene,camera);
+      if(t<1)this.mBucketRaf=requestAnimationFrame(tick);else this.mBucketRaf=null;
+    };
+    this.mBucketRaf=requestAnimationFrame(tick);
+  }
+  mToggleSvc=i=>this.setState(s=>({mActiveSvc:s.mActiveSvc===i?null:i}));
+  mSetArea=i=>this.setState({mActiveArea:i});
+  syncHere(){
+    try{
+      const mid=innerHeight/2;let win=null,best=Infinity;
+      (this.navIds||[]).forEach(id=>{
+        const el=document.getElementById(id);if(!el)return;
+        const r=el.getBoundingClientRect();
+        if(r.top<=mid&&r.bottom>=mid){const d=-1e6+Math.abs((r.top+r.bottom)/2-mid);if(d<best){best=d;win=id;}return;}
+        const d=Math.abs((r.top+r.bottom)/2-mid);if(d<best){best=d;win=id;}
+      });
+      if(!win||win===this.hereId)return;
+      this.hereId=win;
+      document.querySelectorAll('.isle-links a,.menu-sheet nav a').forEach(a=>a.classList.toggle('here',a.getAttribute('href')==='#'+win));
+    }catch(err){}
+  }
+  setMenu(open){
+    const s=this.sheetRef.current;
+    if(s){
+      clearTimeout(this.menuT);
+      if(open){s.style.display='block';requestAnimationFrame(()=>s.classList.add('open'));}
+      else{s.classList.remove('open');this.menuT=setTimeout(()=>{s.style.display='';},620);}
+    }
+    document.querySelectorAll('.menu-btn').forEach(b=>b.setAttribute('aria-expanded',open?'true':'false'));
+    document.body.style.overflow=open?'hidden':'';
+    this.menuOpen=open;
+  }
+  onMenu=()=>this.setMenu(!this.menuOpen);
+  onSheetClick=e=>{if(e.target.tagName==='A'||e.target===e.currentTarget)this.setMenu(false);};
+  readForm(){
+    const g=id=>{const el=document.getElementById(id);return el?el.value.trim():'';};
+    return{name:g('cf-name'),phone:g('cf-phone'),type:g('cf-type'),when:g('cf-when')};
+  }
+  formValid(d){
+    const note=this.formNoteRef.current;
+    if(!d.name||!d.phone){if(note){note.textContent='נא למלא שם וטלפון.';note.style.color='#B4472E';}return false;}
+    if(note){note.textContent='נפתח חלון שליחה. אם הוא לא נפתח — התקשרו 058-780-8908.';note.style.color='#284559';}
+    return true;
+  }
+  formBody(d){
+    return['פנייה חדשה מהאתר','','שם: '+d.name,'טלפון: '+d.phone,'סוג העבודה: '+d.type,'מתי להתחיל: '+d.when].join('\n');
+  }
+  mailHref(d){return'mailto:barakfid88@gmail.com?subject='+encodeURIComponent('פנייה מהאתר · '+(d.name||''))+'&body='+encodeURIComponent(this.formBody(d));}
+  waHref(d){return'https://wa.me/972587808908?text='+encodeURIComponent(this.formBody(d));}
+  syncLinks=()=>{
+    const d=this.readForm();
+    const m=this.mailBtnRef.current,w=this.waBtnRef.current;
+    if(m)m.setAttribute('href',this.mailHref(d));
+    if(w)w.setAttribute('href',this.waHref(d));
+  };
+  onSubmitForm=e=>{
+    e.preventDefault();
+    const d=this.readForm();if(!this.formValid(d))return;
+    const m=this.mailBtnRef.current;if(m){m.setAttribute('href',this.mailHref(d));m.click();}
+  };
+  onMailClick=e=>{
+    const d=this.readForm();
+    if(!this.formValid(d)){e.preventDefault();return;}
+    e.currentTarget.setAttribute('href',this.mailHref(d));
+  };
+  onWhatsappForm=e=>{
+    const d=this.readForm();
+    if(!this.formValid(d)){e.preventDefault();return;}
+    e.currentTarget.setAttribute('href',this.waHref(d));
+  };
+  armReveals(){
+    try{
+      if(!this.rvSeen)this.rvSeen=new WeakSet();
+      if(!this.io3)return;
+      document.querySelectorAll('.rv,.rvi').forEach(el=>{
+        if(this.rvSeen.has(el))return;
+        this.rvSeen.add(el);
+        const b=el.getBoundingClientRect();
+        const visible=b.top<innerHeight&&b.bottom>0;
+        el.classList.add('rv-hide');
+        if(visible)el.classList.add('in');
+        this.io3.observe(el);
+      });
+    }catch(err){}
+  }
+  componentWillUnmount(){cancelAnimationFrame(this.raf);if(this.io)this.io.disconnect();if(this.io2)this.io2.disconnect();if(this.io3)this.io3.disconnect();if(this.io4)this.io4.disconnect();if(this.rvMo)this.rvMo.disconnect();clearTimeout(this.rvT);document.removeEventListener('pointerover',this.onSpot);if(this.blobUrl)URL.revokeObjectURL(this.blobUrl);removeEventListener('pointermove',this.onMove,{capture:true});removeEventListener('mousemove',this.onMove,{capture:true});removeEventListener('touchmove',this.onMove,{capture:true});document.removeEventListener('pointermove',this.onMove,{capture:true});removeEventListener('touchstart',this.onTouch);removeEventListener('keydown',this.onKey);document.body.style.overflow='';clearTimeout(this.menuT);removeEventListener('wheel',this.onTouch);if(this.bucketResize)removeEventListener('resize',this.bucketResize);if(this.bucketScene)this.bucketScene.renderer.dispose();if(this.areaTimer)clearInterval(this.areaTimer);if(this.onResizeMobile)removeEventListener('resize',this.onResizeMobile);if(this.mBucketIO)this.mBucketIO.disconnect();if(this.mBucketRaf)cancelAnimationFrame(this.mBucketRaf);if(this.mBucketResize)removeEventListener('resize',this.mBucketResize);if(this.mBucketScene&&this.mBucketScene.renderer)this.mBucketScene.renderer.dispose();}
+  initMap(){
+    setTimeout(()=>{
+      try{
+        const el=this.mapRef.current;if(!el||!window.L)return;
+        const L=window.L;
+        const areas=[{name:'תל אביב והמרכז',ll:[32.0853,34.7818],z:12},{name:'השרון',ll:[32.1782,34.9147],z:11.5},{name:'השפלה',ll:[31.8928,34.8113],z:11.5},{name:'גוש דן',ll:[32.0167,34.7500],z:12}];
+        const pts=areas.map(a=>a.ll);
+        const chips=[...document.querySelectorAll('[data-area-chip]')];
+        const thumbs=[...document.querySelectorAll('[data-area-thumb]')];
+        const map=L.map(el,{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false}).setView(areas[0].ll,areas[0].z);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:12}).addTo(map);
+        const markers=pts.map(p=>L.circleMarker(p,{radius:8,color:'#0F2233',weight:2,fillColor:'#F2EADF',fillOpacity:.5}).addTo(map));
+        const label=this.areaLabelRef.current;
+        let ai=0;
+        const paint=()=>{markers.forEach((m,i)=>m.setStyle(i===ai?{fillColor:'#C9AE87',fillOpacity:1,radius:11}:{fillColor:'#F2EADF',fillOpacity:.5,radius:8}));
+          chips.forEach((c,i)=>c.classList.toggle('active',i===ai));
+          thumbs.forEach((t,i)=>t.classList.toggle('active',i===ai));
+          if(label)label.textContent=areas[ai].name;
+          map.flyTo(areas[ai].ll,areas[ai].z,{duration:1.5});};
+        const mark=()=>{paint();ai=(ai+1)%areas.length;};
+        const select=i=>{ai=i;paint();ai=(i+1)%areas.length;clearInterval(this.areaTimer);this.areaTimer=setInterval(mark,5000);};
+        chips.forEach((c,i)=>c.addEventListener('click',()=>select(i)));
+        thumbs.forEach((t,i)=>t.addEventListener('click',()=>select(i)));
+        markers.forEach((m,i)=>m.on('click',()=>select(i)));
+        mark();this.areaTimer=setInterval(mark,5000);
+        setTimeout(()=>map.invalidateSize(),80);
+      }catch(err){}
+    },0);
+  }
+  bucketFailed(){
+    const c=this.bucketRef.current;if(!c)return;
+    const host=c.parentElement;if(!host)return;
+    host.style.display='none';
+    const grid=host.parentElement;if(grid)grid.style.gridTemplateColumns='minmax(0,1fr)';
+  }
+  async initBucket(){
+    const canvas=this.bucketRef.current;if(!canvas)return;
+    this.bucketWatch=setTimeout(()=>{if(!this.bucketScene)this.bucketFailed();},12000);
+    let THREE,GLTFLoader;
+    try{
+      [THREE,{GLTFLoader}]=await Promise.all([
+        import('https://esm.sh/three@0.160.0'),
+        import('https://esm.sh/three@0.160.0/examples/jsm/loaders/GLTFLoader.js')
+      ]);
+    }catch(err){this.bucketFailed();return;}
+    if(!this.bucketRef.current)return;
+    try{
+    const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,failIfMajorPerformanceCaveat:false});
+    renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+    const scene=new THREE.Scene();
+    const camera=new THREE.PerspectiveCamera(30,1,0.1,100);
+    camera.position.set(0.2,1.5,6.2);camera.lookAt(0,0.5,0);
+    scene.add(new THREE.HemisphereLight(0xffffff,0x1b3550,1.15));
+    const key=new THREE.DirectionalLight(0xfff3e0,1.7);key.position.set(3.4,5.2,3.6);scene.add(key);
+    const rim=new THREE.DirectionalLight(0xbfe0ff,0.6);rim.position.set(-3,2,-3);scene.add(rim);
+    const sc=document.createElement('canvas');sc.width=256;sc.height=256;
+    const sctx=sc.getContext('2d');const g=sctx.createRadialGradient(128,128,0,128,128,128);
+    g.addColorStop(0,'rgba(15,34,51,.5)');g.addColorStop(0.6,'rgba(15,34,51,.22)');g.addColorStop(1,'rgba(15,34,51,0)');
+    sctx.fillStyle=g;sctx.fillRect(0,0,256,256);
+    const shadowTex=new THREE.CanvasTexture(sc);
+    const shadowMesh=new THREE.Mesh(new THREE.PlaneGeometry(2.6,2.6),new THREE.MeshBasicMaterial({map:shadowTex,transparent:true,depthWrite:false}));
+    shadowMesh.rotation.x=-Math.PI/2;shadowMesh.position.y=0;scene.add(shadowMesh);
+    const rig=new THREE.Group();scene.add(rig);
+    const loadBucketModel=(attempt)=>{
+      new GLTFLoader().load('assets/models/paint-bucket.glb?try='+attempt,gltf=>{
+        const obj=gltf.scene;
+        const box=new THREE.Box3().setFromObject(obj);
+        const size=box.getSize(new THREE.Vector3());const center=box.getCenter(new THREE.Vector3());
+        const scale=1.7/Math.max(size.x,size.y,size.z,0.001);
+        obj.scale.setScalar(scale);
+        obj.position.set(-center.x*scale,-box.min.y*scale,-center.z*scale);
+        rig.add(obj);this.bucketReady=true;
+      },undefined,()=>{
+        if(attempt<2)loadBucketModel(attempt+1);
+        else this.bucketFailed();
+      });
+    };
+    loadBucketModel(0);
+    const splatN=26;const splatGeo=new THREE.CircleGeometry(1,20);
+    const splatMat=new THREE.MeshBasicMaterial({color:0xC9AE87,transparent:true,depthWrite:false});
+    const splats=new THREE.InstancedMesh(splatGeo,splatMat,splatN);
+    splats.rotation.x=-Math.PI/2;splats.position.y=0.002;splats.count=0;scene.add(splats);
+    const splatData=[];for(let i=0;i<splatN;i++){const a=Math.random()*Math.PI*2,d=0.15+Math.random()*1.3;splatData.push({x:Math.cos(a)*d,z:Math.sin(a)*d,s:0.05+Math.random()*0.16,delay:Math.random()*0.5});}
+    const dropN=20;const dropGeo=new THREE.SphereGeometry(1,8,8);dropGeo.scale(0.62,1,0.62);
+    const dropMat=new THREE.MeshStandardMaterial({color:0xC9AE87,roughness:0.28,metalness:0.08});
+    const drops=new THREE.InstancedMesh(dropGeo,dropMat,dropN);drops.count=0;scene.add(drops);
+    const dropData=[];for(let i=0;i<dropN;i++){const a=Math.random()*Math.PI*2,sp=0.5+Math.random()*1.05;
+      dropData.push({vx:Math.cos(a)*sp*0.4,vz:Math.sin(a)*sp*0.4,vy:0.28+Math.random()*0.5,s:0.022+Math.random()*0.026,t0:Math.random()*0.22});}
+    this.bucketScene={renderer,scene,camera,rig,shadowMesh,splats,splatData,drops,dropData,splatDone:false,mtx:new THREE.Matrix4(),tmpV:new THREE.Vector3()};
+    const resize=()=>{const w=canvas.clientWidth||1,h=canvas.clientHeight||1;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();};
+    clearTimeout(this.bucketWatch);
+    this.bucketResize=resize;addEventListener('resize',resize);resize();
+    renderer.render(scene,camera);
+    }catch(err){clearTimeout(this.bucketWatch);this.bucketFailed();}
+  }
+  applyHeight(){const w=this.wrapRef.current;if(w)w.style.height=this.cfg.scrollVh+'vh';}
+  unlock(){const v=this.videoRef.current;if(!v||this.unlocked)return;this.unlocked=true;const pr=v.play();if(pr&&pr.catch)pr.catch(()=>{this.unlocked=false;});}
+  seg(x,a,b){return Math.max(0,Math.min(1,(x-a)/(b-a)));}
+  smooth(t){return t*t*(3-2*t);}
+  tick=()=>{
+    this.raf=requestAnimationFrame(this.tick);
+    const wrap=this.wrapRef.current;if(!wrap)return;
+    const r=wrap.getBoundingClientRect();
+    if(r.bottom<=0){const isle0=this.isleRef.current;if(isle0)isle0.classList.add('in');}
+    const total=r.height-innerHeight;
+    const p=total>0?Math.max(0,Math.min(1,-r.top/total)):0;
+    this.eased+=(p-this.eased)*(this.reduced?1:this.cfg.damping);
+    const e=this.eased;
+    this.mx+=(this.tmx-this.mx)*0.06;this.my+=(this.tmy-this.my)*0.06;
+    const v=this.videoRef.current;
+    let vp=0;
+    if(v){
+      if(this.seekable&&v.duration){
+        if(!v.paused)v.pause();
+        const t=Math.min(v.duration-0.04,Math.max(0,e*v.duration));
+        if(Math.abs(v.currentTime-t)>0.015)v.currentTime=t;
+        vp=t/v.duration;
+      }else{
+        if(e>0.01)this.unlock();
+        const visible=r.top<innerHeight&&r.bottom>0;
+        if(this.unlocked){if(visible&&v.paused)v.play().catch(()=>{});else if(!visible&&!v.paused)v.pause();}
+        if(v.duration)vp=v.currentTime/v.duration;
+      }
+      v.style.opacity=this.smooth(this.seg(e,this.cfg.fadeStart,0.14));
+    }
+    const cloudOut=this.smooth(this.seg(e,0.02,0.17));
+    const cl=this.cloudsRef.current;
+    const k=this.cfg.cloudParallax;
+    if(cl){cl.style.opacity=1-cloudOut;
+      cl.style.transform='translate3d(0,'+(-cloudOut*70)+'px,0) scale('+(1+cloudOut*0.12)+')';
+      cl.style.filter='blur('+(cloudOut*10)+'px)';}
+    const ca=this.cloudARef.current,cb=this.cloudBRef.current;
+    if(ca)ca.style.transform='translate3d('+(this.mx*-72*k)+'px,'+(this.my*-26*k)+'px,0)';
+    if(cb)cb.style.transform='translate3d('+(this.mx*118*k)+'px,'+(this.my*38*k)+'px,0)';
+    const tl=this.titleRef.current;
+    if(tl){const t=this.smooth(this.seg(e,0.025,0.16));
+      tl.style.opacity=1-t;
+      tl.style.filter='blur('+(t*24)+'px)';
+      tl.style.transform='translate3d(0,'+(-t*70)+'px,0) scale('+(1+t*0.1)+')';}
+    const en=this.endRef.current;
+    const vOk=v&&v.duration&&(this.seekable||(this.unlocked&&(vp>0||!v.paused)));
+    if(en){const t=this.smooth(vOk?this.seg(vp,0.88,0.99):this.seg(e,0.9,0.99));
+      en.style.opacity=t;
+      en.style.filter='blur('+((1-t)*20)+'px)';
+      en.style.transform='translate3d(0,'+((1-t)*34)+'px,0)';
+      en.style.pointerEvents=t>0.6?'auto':'none';}
+    const h=this.hintRef.current;
+    if(h)h.style.opacity=1-this.smooth(this.seg(e,0,0.05));
+    const hn=this.heroNavRef.current;
+    if(hn&&!this.coarse){const t=this.smooth(this.seg(e,0.06,0.2));hn.style.opacity=1-t;hn.style.transform='translate3d(0,'+(-t*26)+'px,0)';hn.style.pointerEvents=t>0.5?'none':'auto';}
+    const isle=this.isleRef.current;
+    const show=this.coarse||(vOk?vp>0.9:this.eased>0.93)||(r.top<0&&r.bottom<=innerHeight+2);
+    if(isle)isle.classList.toggle('in',show);
+    const wa=this.waRef.current;if(wa)wa.classList.toggle('in',show);
+    this.tickRail();this.tickBucket();
+    if(!this.hereN||++this.hereN>6){this.hereN=1;this.syncHere();}
+  };
+  tickBucket(){
+    const sc=this.bucketScene;const host=this.howRef.current;if(!sc||!host||!sc.rig)return;
+    const b=host.getBoundingClientRect();
+    if(b.bottom<0||b.top>innerHeight)return;
+    const p=this.smooth(this.seg(b.top,innerHeight*0.82,innerHeight*0.18));
+    this.bucketP+=(p-this.bucketP)*(this.reduced?1:0.09);
+    const t=this.bucketP;
+    const dropH=5.2;
+    const fallT=Math.min(1,t/0.82);
+    let y=(1-this.smooth(fallT))*dropH;
+    if(t>0.82){const bt=this.seg(t,0.82,1);const bounce=Math.sin(Math.min(1,bt)*Math.PI)*0.22*(1-bt);y=-bounce;}
+    y=Math.max(y,-0.001);
+    sc.rig.position.y=y;
+    sc.rig.rotation.y=(1-t)*2.4+t*0.35;
+    sc.rig.rotation.z=Math.sin((1-t)*4)*0.18*(1-t);
+    const near=1-Math.min(1,y/dropH);
+    sc.shadowMesh.scale.setScalar(0.5+near*0.6);
+    sc.shadowMesh.material.opacity=0.15+near*0.55;
+    if(t>0.8){
+      const bt=this.seg(t,0.8,1);const n=Math.min(sc.splatData.length,Math.ceil(bt*sc.splatData.length));
+      for(let i=0;i<n;i++){const d=sc.splatData[i];const grow=Math.max(0,Math.min(1,(bt*sc.splatData.length-i)*2.4));const s=d.s*(0.3+0.7*grow);
+        sc.mtx.makeScale(s,s,1);sc.mtx.setPosition(d.x,d.z,0);sc.splats.setMatrixAt(i,sc.mtx);
+      }
+      sc.splats.count=n;sc.splats.instanceMatrix.needsUpdate=true;sc.splats.material.opacity=0.55;
+    } else if(t<=0.78&&sc.splats.count>0){sc.splats.count=0;}
+    if(t>0.72&&t<0.97){
+      const lt=this.seg(t,0.72,0.97);const n=Math.ceil(lt*sc.dropData.length);let vis=0;
+      for(let i=0;i<n;i++){const d=sc.dropData[i];const dt=Math.max(0,lt-d.t0);if(dt<=0)continue;
+        const gy=1.5+d.vy*dt-4.6*dt*dt;
+        if(gy<-0.05){continue;}
+        const fade=gy<0.12?Math.max(0.15,gy/0.12):1;
+        const stretch=1+Math.min(0.9,d.vy*0.5-dt*2.1>0?0:0);
+        sc.tmpV.set(d.vx*dt,Math.max(gy,0.006),d.vz*dt);
+        sc.mtx.makeScale(d.s*fade,d.s*fade,d.s*fade);sc.mtx.setPosition(sc.tmpV);sc.drops.setMatrixAt(vis,sc.mtx);vis++;}
+      sc.drops.count=vis;sc.drops.instanceMatrix.needsUpdate=true;
+    } else if(sc.drops.count>0){sc.drops.count=0;}
+    sc.renderer.render(sc.scene,sc.camera);
+    const st=this.stepsRef.current;
+    if(st)st.classList.toggle('step-land',t>0.86);
+  }
+  tickRail(){
+    if(this.coarse)return;
+    const w=this.railWrapRef.current,rl=this.railRef.current;if(!w||!rl)return;
+    const b=w.getBoundingClientRect();
+    if(b.bottom<-200||b.top>innerHeight+200)return;
+    const tot=b.height-innerHeight;
+    const p=tot>0?Math.max(0,Math.min(1,-b.top/tot)):0;
+    this.rail+=(p-this.rail)*(this.reduced?1:0.09);
+    const max=Math.max(0,rl.scrollWidth-innerWidth);
+    rl.style.transform='translate3d('+(this.rail*max)+'px,0,0)';
+  }
+  mServicesData=[
+    {n:'01',title:'שיפוץ כללי',desc:'דירה או בית שלם — תכנון, פירוקים, ניהול קבלני משנה ומסירה נקייה.',img:'assets/frames/villa.jpg'},
+    {n:'02',title:'צבע וטיח',desc:'קווים ישרים, פינות חדות וגימור אחיד. בלי תיקונים אחרי שהלכנו.',img:'assets/frames/pr-plaster.jpg'},
+    {n:'03',title:'מטבחים ואמבטיות',desc:'אינסטלציה, חשמל, איטום וריצוף — הכל מתואם מראש, בלי הפתעות.',img:'assets/frames/interior.jpg'},
+    {n:'04',title:'חוץ וגמר',desc:'חיפוי אבן, פרגולות, דקים ומרפסות — הרושם הראשון של הבית.',img:'assets/frames/pr-stone.jpg'},
+  ];
+  mStepsData=[
+    {n:'01',title:'פגישת אפיון',desc:'מגיעים אליכם, מודדים ומבינים בדיוק מה צריך.'},
+    {n:'02',title:'הצעת מחיר מפורטת',desc:'סעיף לכל פריט, בלי עלויות נסתרות שיצוצו באמצע.'},
+    {n:'03',title:'ביצוע וניהול צמוד',desc:'קבלן אחד מתאם את כל בעלי המקצוע ומעדכן אתכם בדרך.'},
+    {n:'04',title:'מסירה נקייה',desc:'סבב בדיקה משותף, תיקונים אם צריך, ומפתח ביד.'},
+  ];
+  mProjectsData=[
+    {img:'assets/frames/pr-villa.jpg',title:'וילה פרטית · שיפוץ חוץ מלא',sub:'טיח, חיפוי וגינון'},
+    {img:'assets/frames/pr-plaster.jpg',title:'טיח וצבע · חלל פתוח',sub:'גימור לפני ריהוט'},
+    {img:'assets/frames/pr-frame.jpg',title:'בניין בשלב גמר',sub:'שלד, טיח וצבע'},
+    {img:'assets/frames/pr-stone.jpg',title:'חיפוי אבן',sub:'חיבור אבן וטיח'},
+    {img:'assets/frames/pr-livingroom.jpg',title:'סלון · גימור לבן',sub:'קירות חלקים, אור טבעי'},
+    {img:'assets/frames/pr-aerial.jpg',title:'מבט מלמעלה · סיום פרויקט',sub:'בית פרטי, חוץ וגמר'},
+  ];
+  mTestimonialsData=[
+    {q:'״נכנסו בתאריך שאמרו, יצאו בתאריך שאמרו. הבית היה נקי בכל יום שישי.״',a:'דנה ואיתי · שיפוץ דירת 4 חדרים'},
+    {q:'״הצעת המחיר הייתה מפורטת עד הפריט האחרון, ולא השתנתה בסוף.״',a:'משפחת אזולאי · בית פרטי'},
+    {q:'״הטיח יצא חלק לגמרי. עברתי עם פנס על הקירות ולא מצאתי כלום.״',a:'רועי · שיפוץ מטבח וסלון'},
+  ];
+  mAreasData=[
+    {label:'תל אביב והמרכז',img:'assets/frames/area-center.jpg'},
+    {label:'השרון',img:'assets/frames/area-sharon.jpg'},
+    {label:'השפלה',img:'assets/frames/area-shfela.jpg'},
+    {label:'גוש דן',img:'assets/frames/area-gushdan.jpg'},
+  ];
+  renderVals(){
+    const s=this.state;
+    const mServices=this.mServicesData.map((sv,i)=>{
+      const active=s.mActiveSvc===i;
+      return{...sv,imgOpacity:active?1:0,numColor:active?'#F2EADF':'#C9AE87',titleColor:active?'#FFFFFF':'#0F2233',descColor:active?'rgba(242,234,223,.85)':'#284559',toggle:()=>this.mToggleSvc(i)};
+    });
+    const mAreas=this.mAreasData.map((a,i)=>({
+      ...a,opacity:i===s.mActiveArea?1:0,
+      chipBg:i===s.mActiveArea?'rgba(201,174,135,.28)':'rgba(242,234,223,.1)',
+      chipShadow:i===s.mActiveArea?'inset 0 0 0 1px #C9AE87':'inset 0 0 0 1px rgba(242,234,223,.22)',
+      select:()=>this.mSetArea(i)
+    }));
+    return{
+    isMobile:s.isMobile,isDesktop:!s.isMobile,
+    mServices,mSteps:this.mStepsData,mProjects:this.mProjectsData,mTestimonials:this.mTestimonialsData,mAreas,
+    mActiveAreaLabel:this.mAreasData[s.mActiveArea].label,
+    mBucketRef:this.mBucketRef,mBucketHostRef:this.mBucketHostRef,mHeroVideoRef:this.mHeroVideoRef,
+    wrapRef:this.wrapRef,cloudsRef:this.cloudsRef,cloudARef:this.cloudARef,cloudBRef:this.cloudBRef,videoRef:this.videoRef,titleRef:this.titleRef,endRef:this.endRef,hintRef:this.hintRef,railWrapRef:this.railWrapRef,railHintRef:this.railHintRef,railRef:this.railRef,revealRef:this.revealRef,revealTopRef:this.revealTopRef,roomRef:this.roomRef,svcRef:this.svcRef,isleRef:this.isleRef,heroNavRef:this.heroNavRef,howRef:this.howRef,stepsRef:this.stepsRef,bucketRef:this.bucketRef,railWrapRef:this.railWrapRef,railRef:this.railRef,railHintRef:this.railHintRef,waRef:this.waRef,mapRef:this.mapRef,areaLabelRef:this.areaLabelRef,formNoteRef:this.formNoteRef,onSubmit:this.onSubmitForm,onWhatsapp:this.onWhatsappForm,onMailClick:this.onMailClick,onFormInput:this.syncLinks,mailBtnRef:this.mailBtnRef,waBtnRef:this.waBtnRef,sheetRef:this.sheetRef,onMenu:this.onMenu,onSheetClick:this.onSheetClick};}
+}
+</script>
+</body>
+</html>
