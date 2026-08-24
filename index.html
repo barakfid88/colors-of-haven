@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://tile.openstreetmap.org; media-src 'self' blob:; font-src 'self' data: https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://esm.sh; connect-src 'self' blob: https://formsubmit.co https://unpkg.com https://esm.sh; upgrade-insecure-requests">
 <title>Colors of Haven — קבלן שיפוצים כללי | תל אביב, השרון, השפלה וגוש דן</title>
 <meta name="description" content="קבלן שיפוצים כללי — מנהלים את הפרויקט מהיום הראשון ועד מסירת המפתח: הריסה, אינסטלציה, חשמל, ריצוף, טיח וצבע. קבלן אחד, אחריות אחת. פגישת אפיון ראשונית ללא עלות.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2233'/%3E%3Ctext x='50' y='58' font-family='Georgia,serif' font-size='26' fill='%23F2EADF' text-anchor='middle'%3ECH%3C/text%3E%3C/svg%3E">
@@ -341,6 +342,7 @@
 <h2 class="rv" style="transition-delay:90ms;margin:0 0 12px;font-family:'Suez One',serif;font-weight:400;font-size:clamp(24px,2.6vw,36px);line-height:1.2;color:#0F2233">השאירו פרטים ונחזור אליכם באותו היום.</h2>
 <p class="rv" style="transition-delay:170ms;margin:0 0 28px;font-size:15px;line-height:1.7;color:#284559">פגישת אפיון ראשונית ללא עלות, באזור המרכז והשפלה.</p>
 <form class="rv" style="transition-delay:250ms;display:grid;gap:20px" onSubmit="{{ onSubmit }}" onInput="{{ onFormInput }}" onChange="{{ onFormInput }}">
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf-hp">אל תמלאו שדה זה</label><input id="cf-hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"/></div>
 <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
 <div class="field"><label for="cf-name">שם מלא</label><input id="cf-name" type="text" placeholder="איך קוראים לך?"/></div>
 <div class="field"><label for="cf-phone">טלפון</label><input id="cf-phone" type="tel" placeholder="050-000-0000"/></div>
@@ -508,6 +510,7 @@
 <p style="margin:0;font-size:14px;line-height:1.65;color:#284559">פגישת אפיון ראשונית ללא עלות, באזור המרכז והשפלה.</p>
 </div>
 <form style="position:relative;z-index:1;display:grid;gap:16px" onSubmit="{{ onSubmit }}" onInput="{{ onFormInput }}" onChange="{{ onFormInput }}">
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf-hp">אל תמלאו שדה זה</label><input id="cf-hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"/></div>
 <div style="display:grid;gap:8px"><label for="cf-name" style="font-size:13px;color:#284559;font-weight:500">שם מלא</label><input id="cf-name" type="text" placeholder="איך קוראים לך?" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
 <div style="display:grid;gap:8px"><label for="cf-phone" style="font-size:13px;color:#284559;font-weight:500">טלפון</label><input id="cf-phone" type="tel" placeholder="050-000-0000" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
 <div style="display:grid;gap:8px"><label for="cf-type" style="font-size:13px;color:#284559;font-weight:500">סוג העבודה</label><select id="cf-type" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
@@ -787,7 +790,7 @@ class Component extends DCLogic {
   onSheetClick=e=>{if(e.target.tagName==='A'||e.target===e.currentTarget)this.setMenu(false);};
   readForm(){
     const g=id=>{const el=document.getElementById(id);return el?el.value.trim():'';};
-    return{name:g('cf-name'),phone:g('cf-phone'),type:g('cf-type'),when:g('cf-when')};
+    return{name:g('cf-name'),phone:g('cf-phone'),type:g('cf-type'),when:g('cf-when'),hp:g('cf-hp')};
   }
   formValid(d){
     const note=this.formNoteRef.current;
@@ -801,6 +804,10 @@ class Component extends DCLogic {
   mailHref(d){return'mailto:barakfid88@gmail.com?subject='+encodeURIComponent('פנייה מהאתר · '+(d.name||''))+'&body='+encodeURIComponent(this.formBody(d));}
   waHref(d){return'https://wa.me/972587808908?text='+encodeURIComponent(this.formBody(d));}
   submitToBackend(d){
+    // Honeypot: the field is off-screen and unlabelled for humans, so a
+    // filled value means a bot walked the DOM. Drop it silently — telling
+    // the bot it failed is how it learns to skip the field next time.
+    if(d.hp)return;
     try{
       fetch('https://formsubmit.co/ajax/barakfid88@gmail.com',{
         method:'POST',
