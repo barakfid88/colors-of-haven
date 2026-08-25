@@ -50,6 +50,7 @@ export default async function handler(req, res) {
   // never ran that check.
   if (!name || !phone) return res.status(400).json({ ok: false });
 
+  const site = process.env.SITE_ORIGIN || 'https://colors-of-haven.vercel.app';
   const to = process.env.LEAD_EMAIL;
   if (!to) {
     console.error('[lead] LEAD_EMAIL is not set — dropping', { name });
@@ -60,7 +61,15 @@ export default async function handler(req, res) {
     `https://formsubmit.co/ajax/${encodeURIComponent(to)}`,
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        // formsubmit refuses a request with no Origin/Referer ("open this page
+        // through a web server"). A browser sets them; a serverless fetch does
+        // not, so they have to be set by hand or every lead is rejected.
+        Origin: site,
+        Referer: `${site}/`,
+      },
       body: JSON.stringify({
         name,
         phone,
