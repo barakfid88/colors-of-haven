@@ -42,9 +42,9 @@ export default async function handler(req, res) {
     (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
   if (!allow(ip)) return res.status(429).json({ ok: false });
 
-  const body = typeof req.body === 'string' ? safeParse(req.body) : req.body || {};
-  const name = clean(body.name, 120);
-  const phone = clean(body.phone, 40);
+  const input = typeof req.body === 'string' ? safeParse(req.body) : req.body || {};
+  const name = clean(input.name, 120);
+  const phone = clean(input.phone, 40);
 
   // Same rule the form applies on the client, restated here — a direct POST
   // never ran that check.
@@ -73,15 +73,21 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         name,
         phone,
-        type: clean(body.type, 80),
-        when: clean(body.when, 80),
+        type: clean(input.type, 80),
+        when: clean(input.when, 80),
         _subject: `פנייה חדשה מהאתר · ${name}`,
       }),
     }
   );
 
-  if (!upstream.ok) {
-    console.error('[lead] upstream returned', upstream.status);
+  // formsubmit answers 200 even when it refuses the lead — an unactivated
+  // address comes back as {"success":"false"} with a 200. Trusting the status
+  // alone reports every dropped lead as delivered.
+  const body = await upstream.json().catch(() => ({}));
+  const accepted = upstream.ok && String(body.success) !== 'false';
+
+  if (!accepted) {
+    console.error('[lead] upstream refused', upstream.status, body.message ?? '');
     return res.status(502).json({ ok: false });
   }
   return res.status(200).json({ ok: true });
