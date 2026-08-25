@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://tile.openstreetmap.org; media-src 'self' blob:; font-src 'self' data: https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://esm.sh; connect-src 'self' blob: https://formsubmit.co https://unpkg.com https://esm.sh; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://tile.openstreetmap.org; media-src 'self' blob:; font-src 'self' data: https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://esm.sh; connect-src 'self' blob: https://unpkg.com https://esm.sh; upgrade-insecure-requests">
 <title>Colors of Haven — קבלן שיפוצים כללי | תל אביב, השרון, השפלה וגוש דן</title>
 <meta name="description" content="קבלן שיפוצים כללי — מנהלים את הפרויקט מהיום הראשון ועד מסירת המפתח: הריסה, אינסטלציה, חשמל, ריצוף, טיח וצבע. קבלן אחד, אחריות אחת. פגישת אפיון ראשונית ללא עלות.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2233'/%3E%3Ctext x='50' y='58' font-family='Georgia,serif' font-size='26' fill='%23F2EADF' text-anchor='middle'%3ECH%3C/text%3E%3C/svg%3E">
@@ -342,20 +342,20 @@
 <h2 class="rv" style="transition-delay:90ms;margin:0 0 12px;font-family:'Suez One',serif;font-weight:400;font-size:clamp(24px,2.6vw,36px);line-height:1.2;color:#0F2233">השאירו פרטים ונחזור אליכם באותו היום.</h2>
 <p class="rv" style="transition-delay:170ms;margin:0 0 28px;font-size:15px;line-height:1.7;color:#284559">פגישת אפיון ראשונית ללא עלות, באזור המרכז והשפלה.</p>
 <form class="rv" style="transition-delay:250ms;display:grid;gap:20px" onSubmit="{{ onSubmit }}" onInput="{{ onFormInput }}" onChange="{{ onFormInput }}">
-<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf-hp">אל תמלאו שדה זה</label><input id="cf-hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"/></div>
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf-hp">אל תמלאו שדה זה</label><input id="cf-hp" data-f="hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"/></div>
 <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-<div class="field"><label for="cf-name">שם מלא</label><input id="cf-name" type="text" placeholder="איך קוראים לך?"/></div>
-<div class="field"><label for="cf-phone">טלפון</label><input id="cf-phone" type="tel" placeholder="050-000-0000"/></div>
+<div class="field"><label for="cf-name">שם מלא</label><input id="cf-name" data-f="name" type="text" placeholder="איך קוראים לך?"/></div>
+<div class="field"><label for="cf-phone">טלפון</label><input id="cf-phone" data-f="phone" type="tel" placeholder="050-000-0000"/></div>
 </div>
 <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-<div class="field"><label for="cf-type">סוג העבודה</label><select id="cf-type"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
-<div class="field"><label for="cf-when">מתי תרצו להתחיל</label><select id="cf-when"><option>בהקדם האפשרי</option><option>תוך חודש</option><option>עוד 2-3 חודשים</option><option>עדיין בודקים</option></select></div>
+<div class="field"><label for="cf-type">סוג העבודה</label><select id="cf-type" data-f="type"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
+<div class="field"><label for="cf-when">מתי תרצו להתחיל</label><select id="cf-when" data-f="when"><option>בהקדם האפשרי</option><option>תוך חודש</option><option>עוד 2-3 חודשים</option><option>עדיין בודקים</option></select></div>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:6px">
-<a ref="{{ mailBtnRef }}" href="mailto:barakfid88@gmail.com" onClick="{{ onMailClick }}" class="cta"><span class="stack"><i>שליחה במייל</i><i>barakfid88@gmail.com</i></span></a>
-<a ref="{{ waBtnRef }}" href="https://wa.me/972587808908" target="_blank" rel="noopener" onClick="{{ onWhatsapp }}" class="cta" style="background:#0F2233"><span class="stack"><i>שליחה בוואטסאפ</i><i>058-780-8908</i></span></a>
+<a data-f="mail" href="mailto:barakfid88@gmail.com" onClick="{{ onMailClick }}" class="cta"><span class="stack"><i>שליחה במייל</i><i>barakfid88@gmail.com</i></span></a>
+<a data-f="wa" href="https://wa.me/972587808908" target="_blank" rel="noopener" onClick="{{ onWhatsapp }}" class="cta" style="background:#0F2233"><span class="stack"><i>שליחה בוואטסאפ</i><i>058-780-8908</i></span></a>
 </div>
-<span ref="{{ formNoteRef }}" style="font-size:13px;color:#284559;min-height:18px"></span>
+<span data-f="note" style="font-size:13px;color:#284559;min-height:18px"></span>
 </form>
 </div>
 </div>
@@ -510,15 +510,15 @@
 <p style="margin:0;font-size:14px;line-height:1.65;color:#284559">פגישת אפיון ראשונית ללא עלות, באזור המרכז והשפלה.</p>
 </div>
 <form style="position:relative;z-index:1;display:grid;gap:16px" onSubmit="{{ onSubmit }}" onInput="{{ onFormInput }}" onChange="{{ onFormInput }}">
-<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf-hp">אל תמלאו שדה זה</label><input id="cf-hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"/></div>
-<div style="display:grid;gap:8px"><label for="cf-name" style="font-size:13px;color:#284559;font-weight:500">שם מלא</label><input id="cf-name" type="text" placeholder="איך קוראים לך?" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
-<div style="display:grid;gap:8px"><label for="cf-phone" style="font-size:13px;color:#284559;font-weight:500">טלפון</label><input id="cf-phone" type="tel" placeholder="050-000-0000" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
-<div style="display:grid;gap:8px"><label for="cf-type" style="font-size:13px;color:#284559;font-weight:500">סוג העבודה</label><select id="cf-type" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="cf2-hp">אל תמלאו שדה זה</label><input id="cf2-hp" data-f="hp" name="cf2-hp" type="text" tabindex="-1" autocomplete="off"/></div>
+<div style="display:grid;gap:8px"><label for="cf2-name" style="font-size:13px;color:#284559;font-weight:500">שם מלא</label><input id="cf2-name" data-f="name" type="text" placeholder="איך קוראים לך?" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
+<div style="display:grid;gap:8px"><label for="cf2-phone" style="font-size:13px;color:#284559;font-weight:500">טלפון</label><input id="cf2-phone" data-f="phone" type="tel" placeholder="050-000-0000" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"/></div>
+<div style="display:grid;gap:8px"><label for="cf2-type" style="font-size:13px;color:#284559;font-weight:500">סוג העבודה</label><select id="cf2-type" data-f="type" style="font:inherit;font-size:15px;color:#0F2233;background:#FFFFFF;border:1px solid rgba(15,34,51,.16);border-radius:6px;padding:13px 16px"><option>שיפוץ כללי</option><option>צבע וטיח</option><option>מטבח / אמבטיה</option><option>חוץ וגמר</option><option>אחר</option></select></div>
 <div style="display:flex;gap:10px;flex-wrap:wrap">
-<a ref="{{ mailBtnRef }}" href="mailto:barakfid88@gmail.com" onClick="{{ onMailClick }}" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;height:50px;border-radius:6px;background:#123A5C;color:#F2EADF;font-size:14px;font-weight:600;text-decoration:none">שליחה במייל</a>
-<a ref="{{ waBtnRef }}" href="https://wa.me/972587808908" target="_blank" rel="noopener" onClick="{{ onWhatsapp }}" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;height:50px;border-radius:6px;background:#0F2233;color:#F2EADF;font-size:14px;font-weight:600;text-decoration:none">וואטסאפ</a>
+<a data-f="mail" href="mailto:barakfid88@gmail.com" onClick="{{ onMailClick }}" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;height:50px;border-radius:6px;background:#123A5C;color:#F2EADF;font-size:14px;font-weight:600;text-decoration:none">שליחה במייל</a>
+<a data-f="wa" href="https://wa.me/972587808908" target="_blank" rel="noopener" onClick="{{ onWhatsapp }}" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;height:50px;border-radius:6px;background:#0F2233;color:#F2EADF;font-size:14px;font-weight:600;text-decoration:none">וואטסאפ</a>
 </div>
-<span ref="{{ formNoteRef }}" style="font-size:13px;color:#284559;min-height:18px"></span>
+<span data-f="note" style="font-size:13px;color:#284559;min-height:18px"></span>
 </form>
 <div style="position:relative;z-index:1;background:#0F2233;border-radius:10px;padding:22px;display:grid;gap:12px">
 <h3 style="margin:0;font-family:'Suez One',serif;font-weight:400;font-size:18px;color:#F2EADF">מעדיפים לדבר?</h3>
@@ -788,12 +788,25 @@ class Component extends DCLogic {
   }
   onMenu=()=>this.setMenu(!this.menuOpen);
   onSheetClick=e=>{if(e.target.tagName==='A'||e.target===e.currentTarget)this.setMenu(false);};
-  readForm(){
-    const g=id=>{const el=document.getElementById(id);return el?el.value.trim():'';};
-    return{name:g('cf-name'),phone:g('cf-phone'),type:g('cf-type'),when:g('cf-when'),hp:g('cf-hp')};
+  /**
+   * Every read and write is scoped to the form the event came from.
+   *
+   * Both forms used to share one set of ids and one set of refs, so
+   * `getElementById` always returned the top form's inputs while the refs
+   * pointed at the bottom form's buttons — filling the bottom form sent an
+   * empty lead, and filling the top one drove the wrong button. Nothing about
+   * that failed loudly; the enquiry just arrived blank.
+   */
+  formOf(e){
+    const t=e.currentTarget;
+    return t&&t.tagName==='FORM'?t:(t?t.closest('form'):null);
   }
-  formValid(d){
-    const note=this.formNoteRef.current;
+  readForm(form){
+    const g=role=>{const el=form?form.querySelector('[data-f="'+role+'"]'):null;return el?el.value.trim():'';};
+    return{name:g('name'),phone:g('phone'),type:g('type'),when:g('when'),hp:g('hp')};
+  }
+  formValid(form,d){
+    const note=form?form.querySelector('[data-f="note"]'):null;
     if(!d.name||!d.phone){if(note){note.textContent='נא למלא שם וטלפון.';note.style.color='#B4472E';}return false;}
     if(note){note.textContent='נפתח חלון שליחה. אם הוא לא נפתח — התקשרו 058-780-8908.';note.style.color='#284559';}
     return true;
@@ -809,34 +822,44 @@ class Component extends DCLogic {
     // the bot it failed is how it learns to skip the field next time.
     if(d.hp)return;
     try{
-      fetch('https://formsubmit.co/ajax/barakfid88@gmail.com',{
+      // Same-origin, so the destination address stays on the server. This used
+      // to POST straight to formsubmit.co/ajax/<the address>, which put a real
+      // inbox in the page source of a public site for any scraper to harvest.
+      // On a host without functions (the GitHub Pages mirror) this 404s and the
+      // catch swallows it — the mail and WhatsApp buttons are unaffected.
+      fetch('/api/lead',{
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify({name:d.name,phone:d.phone,type:d.type,when:d.when,_subject:'פנייה חדשה מהאתר · '+d.name})
+        body:JSON.stringify({name:d.name,phone:d.phone,type:d.type,when:d.when})
       }).catch(()=>{});
     }catch(err){}
   }
-  syncLinks=()=>{
-    const d=this.readForm();
-    const m=this.mailBtnRef.current,w=this.waBtnRef.current;
+  syncLinks=e=>{
+    const form=this.formOf(e);if(!form)return;
+    const d=this.readForm(form);
+    const m=form.querySelector('[data-f="mail"]'),w=form.querySelector('[data-f="wa"]');
     if(m)m.setAttribute('href',this.mailHref(d));
     if(w)w.setAttribute('href',this.waHref(d));
   };
   onSubmitForm=e=>{
     e.preventDefault();
-    const d=this.readForm();if(!this.formValid(d))return;
+    const form=this.formOf(e);
+    const d=this.readForm(form);if(!this.formValid(form,d))return;
     this.submitToBackend(d);
-    const m=this.mailBtnRef.current;if(m){m.setAttribute('href',this.mailHref(d));m.click();}
+    const m=form?form.querySelector('[data-f="mail"]'):null;
+    if(m){m.setAttribute('href',this.mailHref(d));m.click();}
   };
   onMailClick=e=>{
-    const d=this.readForm();
-    if(!this.formValid(d)){e.preventDefault();return;}
+    const form=this.formOf(e);
+    const d=this.readForm(form);
+    if(!this.formValid(form,d)){e.preventDefault();return;}
     this.submitToBackend(d);
     e.currentTarget.setAttribute('href',this.mailHref(d));
   };
   onWhatsappForm=e=>{
-    const d=this.readForm();
-    if(!this.formValid(d)){e.preventDefault();return;}
+    const form=this.formOf(e);
+    const d=this.readForm(form);
+    if(!this.formValid(form,d)){e.preventDefault();return;}
     this.submitToBackend(d);
     e.currentTarget.setAttribute('href',this.waHref(d));
   };
@@ -1112,7 +1135,7 @@ class Component extends DCLogic {
     mServices,mSteps:this.mStepsData,mProjects:this.mProjectsData,mTestimonials:this.mTestimonialsData,mAreas,
     mActiveAreaLabel:this.mAreasData[s.mActiveArea].label,
     mBucketRef:this.mBucketRef,mBucketHostRef:this.mBucketHostRef,mHeroVideoRef:this.mHeroVideoRef,
-    wrapRef:this.wrapRef,cloudsRef:this.cloudsRef,cloudARef:this.cloudARef,cloudBRef:this.cloudBRef,videoRef:this.videoRef,titleRef:this.titleRef,endRef:this.endRef,hintRef:this.hintRef,railWrapRef:this.railWrapRef,railHintRef:this.railHintRef,railRef:this.railRef,revealRef:this.revealRef,revealTopRef:this.revealTopRef,roomRef:this.roomRef,svcRef:this.svcRef,isleRef:this.isleRef,heroNavRef:this.heroNavRef,howRef:this.howRef,stepsRef:this.stepsRef,bucketRef:this.bucketRef,railWrapRef:this.railWrapRef,railRef:this.railRef,railHintRef:this.railHintRef,waRef:this.waRef,mapRef:this.mapRef,areaLabelRef:this.areaLabelRef,formNoteRef:this.formNoteRef,onSubmit:this.onSubmitForm,onWhatsapp:this.onWhatsappForm,onMailClick:this.onMailClick,onFormInput:this.syncLinks,mailBtnRef:this.mailBtnRef,waBtnRef:this.waBtnRef,sheetRef:this.sheetRef,onMenu:this.onMenu,onSheetClick:this.onSheetClick};}
+    wrapRef:this.wrapRef,cloudsRef:this.cloudsRef,cloudARef:this.cloudARef,cloudBRef:this.cloudBRef,videoRef:this.videoRef,titleRef:this.titleRef,endRef:this.endRef,hintRef:this.hintRef,railWrapRef:this.railWrapRef,railHintRef:this.railHintRef,railRef:this.railRef,revealRef:this.revealRef,revealTopRef:this.revealTopRef,roomRef:this.roomRef,svcRef:this.svcRef,isleRef:this.isleRef,heroNavRef:this.heroNavRef,howRef:this.howRef,stepsRef:this.stepsRef,bucketRef:this.bucketRef,railWrapRef:this.railWrapRef,railRef:this.railRef,railHintRef:this.railHintRef,waRef:this.waRef,mapRef:this.mapRef,areaLabelRef:this.areaLabelRef,onSubmit:this.onSubmitForm,onWhatsapp:this.onWhatsappForm,onMailClick:this.onMailClick,onFormInput:this.syncLinks,sheetRef:this.sheetRef,onMenu:this.onMenu,onSheetClick:this.onSheetClick};}
 }
 </script>
 </body>
